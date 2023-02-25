@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog : Editor</title>
+
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/editor.css">
+
+</head>
+<body>
+ <!-- <style>
+    form {
+  max-width: 817px;
+  padding: 48px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  margin: 3rem auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+  display: block;
+  margin: 20px 0;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0062cc;
+}
+
+ </style> -->
+    <div class="banner">
+        <input type="file" accept="image/*" id="banner-upload" hidden>
+        <label for="banner-upload" class="banner-upload-btn"><img src="img/upload.png" alt="upload banner"></label>
+    </div>
+    
+    <div class="blog">
+        <input type="text" class="title" placeholder="property address"><br>
+        <input type="text" class="article" placeholder="property description"><br>
+        <input type="text" class="listing" placeholder="LISTED BY:"/>
+    </div>
+    <!-- <form id="form_">
+		<label for="name">LISTED BY:</label>
+		<input type="text" id="listed" name="name"><br>
+
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email"><br>
+
+		<label for="phone">Phone:</label>
+		<input type="tel" id="phone" name="phone"><br>
+
+		<label for="address">Address:</label>
+		<input type="text" id="address" name="address"><br>
+
+		<label for="city">City:</label>
+		<input type="text" id="city" name="city"><br>
+
+		<label for="state">State:</label>
+		<input type="text" id="state" name="state"><br>
+
+		<label for="zip">Zip Code:</label>
+		<input type="number" id="zip" name="zip"><br>
+
+		<label for="country">Country:</label>
+		<input type="text" id="country" name="country"><br>
+
+		<label for="dob">Price History</label>
+		<input type="date" id="price_history" name="dob"><br>
+
+		<label for="gender">Accessibility</label>
+		<input type="radio" id="none" name="gender" value="male"> None
+		<input type="radio" id="yes" name="gender" value="female"> Yes
+		
+        <label for="bed">Bed</label>
+		<select id="bed" name="education">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+		</select><br>
+		<label for="bathroom">Bathroom</label>
+		<select id="bathroom" name="education">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+		</select><br>
+
+		<label for="occupation">Cooling:</label>
+		<input type="text" id="cooling" name="occupation"><br>
+
+		<label for="hobbies">Heating:</label>
+		<input type="text" id="heating" name="hobbies"><br>
+
+		<label for="skills">Interior Features:</label>
+		<input type="text" id="feature" name="skills"><br>
+
+		<label for="languages">Levels:</label>
+		<input type="text" id="levels" name="languages"><br>
+        <input type="submit" value="submit">
+    </form> -->
+    <div class="blog-options">
+        <button class="btn dark publish-btn">Add listings</button>
+        <input type="file" accept="image/*" id="image-upload" hidden>
+        <label for="image-upload" class="btn grey upload-btn">Upload property img</label>
+    </div>
+  
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+
+    <script src="js/firebase.js"></script>
+    <script src="js/editor.js"></script>
+
+</body>
+</html>
