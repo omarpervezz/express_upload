@@ -9,7 +9,6 @@
     height: fit-content;
     padding: 0 10px;
     white-space: normal;
-    border: none;
 }
 
 .published{
@@ -42,6 +41,6 @@
     padding: 0 5vw;
     color: #2d2d2d;
     font-weight: 500;
-    font-size: 31px;
-    margin-top: 161px;
+    font-size: 40px;
+    margin-top: 80px;
 }

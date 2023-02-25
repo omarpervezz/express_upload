@@ -4,7 +4,6 @@ let docRef = db.collection("blogs").doc(blogId);
 
 docRef.get().then((doc) => {
     if(doc.exists){
-        
         setupBlog(doc.data());
     } else{
         location.replace("/");
@@ -12,18 +11,15 @@ docRef.get().then((doc) => {
 })
 
 const setupBlog = (data) => {
-    console.log(data)
     const banner = document.querySelector('.banner');
     const blogTitle = document.querySelector('.title');
     const titleTag = document.querySelector('title');
     const publish = document.querySelector('.published');
-    const listed_by = document.querySelector('.listed_by');
     
     banner.style.backgroundImage = `url(${data.bannerImage})`;
 
     titleTag.innerHTML += blogTitle.innerHTML = data.title;
     publish.innerHTML += data.publishedAt;
-    listed_by.innerHTML += data.propertyListedBy;
 
     const article = document.querySelector('.article');
     addArticle(article, data.article);
