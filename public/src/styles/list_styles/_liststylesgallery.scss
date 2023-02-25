@@ -1,0 +1,41 @@
+.all_listing_gallery__ {
+  position: relative;
+  background: #eceff1 !important;
+  > :first-child {
+    display: flex;
+    justify-content: center;
+    h2 {
+      color: #333333 !important;
+      span {
+        color: #276478 !important ;
+      }
+      &:before {
+        content: "" !important;
+        background-color: #492669 !important;
+      }
+      &:after {
+        background-color: #276478 !important;
+      }
+    }
+
+    &__link {
+      margin: 2px;
+      overflow: hidden;
+      &:hover {
+        .gallery__image {
+          filter: grayscale(0);
+        }
+
+        .gallery__caption {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .gallery > div {
+    flex-direction: column;
+    align-items: center;
+  }
+}

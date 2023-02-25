@@ -1,0 +1,71 @@
+.s__banner {
+  .bottom_bg {
+    background: $white;
+  }
+}
+.colloborating__ {
+  h1 {
+    height: $full__height;
+    line-height: calc($full__height * 1.3);
+  }
+}
+
+.b__heading {
+  background-color: $primary_two;
+}
+
+.video_wrapper {
+  background-color: $primary_one;
+  padding: 8rem 0;
+  .row__1 {
+    margin-bottom: 4rem;
+  }
+  h5 {
+    width: $full__width;
+    color: #e42b2b;
+    font-weight: 500;
+    font-size: 1.7rem;
+  }
+  h2,
+  p {
+    color: $primary_two;
+  }
+  .siteWrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+.about__wo {
+  background-color: #1b1b1b;
+  h2,
+  p,
+  a {
+    color: $white !important;
+  }
+  .seller_btn,
+  .buyer_btn {
+    background: transparent;
+    border: 0.1rem solid $white;
+    &:before,
+    &:after {
+      background: $white !important;
+    }
+    &:hover {
+      background: $white;
+      color: $black !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .video_wrapper iframe {
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 766px) {
+  .video_wrapper iframe {
+    height: 224px;
+  }
+}

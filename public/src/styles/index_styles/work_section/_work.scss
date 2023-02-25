@@ -1,0 +1,58 @@
+.work_sec {
+  padding: 10rem 0;
+  text-align: center;
+  min-height: 30vh;
+  background-color: #eceff1;
+
+  h2 {
+    margin: 0 0 1.5rem 0;
+    text-align: left;
+    color: #1b1b1b;
+    &:before,
+    &:after {
+      content: none !important;
+    }
+  }
+  .paragraph_ {
+    color: #1b1b1b;
+    width: 59%;
+    text-align: left;
+    font-weight: 500;
+    margin: 1.3rem 0;
+  }
+  .learn_more_btn {
+    border: 0.1rem solid #1b1b1b;
+    &:hover:after {
+      background-color: $black;
+    }
+    &:hover {
+      background: transparent;
+      color: #1b1b1b;
+    }
+  }
+  .work_ {
+    background: $black;
+    color: $white;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .work_sec .paragraph_ {
+    width: 100%;
+    margin: 0.4rem 0 1rem 0;
+  }
+
+  .work_sec .learn_more_btn {
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .work_sec .paragraph_ {
+    margin: 0.2 0 0.2rem 0;
+  }
+}
+@media only screen and (max-width: 766px) {
+  .work_sec {
+    padding: 5rem 0;
+  }
+}

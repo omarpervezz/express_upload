@@ -1,0 +1,67 @@
+$no_repeat: no-repeat;
+$cover: cover;
+$center: center;
+
+.master_plan_ {
+  padding-top: 0;
+  padding-bottom: 0;
+
+  .bg-primary {
+    padding: 7rem 0;
+    background-color: #eceff1 !important;
+    .fluid_1 {
+      width: 80% !important;
+      margin-right: auto;
+      margin-left: auto;
+      h2,
+      p {
+        color: #1b1b1b;
+      }
+    }
+  }
+  .container-fluid {
+    width: 100%;
+    padding-left: 0 !important;
+
+    .listing_buying {
+      & > div {
+        width: 50%;
+        height: 50vh;
+      }
+
+      .listing_homes {
+        background: linear-gradient(
+            hsla(0, 0%, 0%, 0.432),
+            hsla(0, 0%, 0%, 0.432)
+          ),
+          url(https://images.pexels.com/photos/6631793/pexels-photo-6631793.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load);
+        background-repeat: $no_repeat;
+        background-size: $cover;
+        background-position: $center;
+      }
+      .buying_homes {
+        background: linear-gradient(
+            hsla(0, 0%, 0%, 0.192),
+            hwb(0 0% 100% / 0.24)
+          ),
+          url(https://images.pexels.com/photos/3288100/pexels-photo-3288100.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+        background-repeat: $no_repeat;
+        background-size: $cover;
+        background-position: $center;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .master_plan_ .bg-primary {
+    padding: 3rem 0;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .listing_buying {
+    & > div {
+      width: 100% !important;
+      height: 30vh !important;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+/* normalize css*/
+@import "normalize.css/normalize.css";
+
+/* google font poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+/* primary css */
+@import "./primary_css/primary";
+/* variable  */
+@import "./variable_css/variable";
+@import "./button_scss/button";
+/* header css*/
+@import "./index_styles/header_css/header";
+@import "./index_styles/banner_css/banner";
+@import "./index_styles/recent_listing_css/recent";
+@import "./index_styles/card_contianer_css/card";
+@import "./index_styles/work_section/work";
+@import "./index_styles/master_css/master";
+@import "./index_styles/team_css/team";
+@import "./common_scss/common";
+@import "./index_styles/testimonial__/testimonial";
+@import "./list_styles/liststylesbanner";
+@import "./list_styles/liststylesgallery";
+@import "./list_styles/pagination";
+@import "./seller_css/seller";
+@import "./buyer_css/buyer";
+@import "./about_us_css/about";
+@import "./qeustion__css/question";
+@import "./contact";
+@import "./videos_css/videos";
