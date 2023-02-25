@@ -1,5 +1,6 @@
 const blogTitleField = document.querySelector('.title');
 const articleFeild = document.querySelector('.article');
+const listings = document.querySelector('.listings');
 
 // banner
 const bannerImage = document.querySelector('#banner-upload');
@@ -49,7 +50,7 @@ const addImage = (imagepath, alt) => {
 let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 publishBtn.addEventListener('click', () => {
-    if(articleFeild.value.length && blogTitleField.value.length){
+    if(articleFeild.value.length && blogTitleField.value.length && listings.value.length){
         // generating id
         let letters = 'abcdefghijklmnopqrstuvwxyz';
         let blogTitle = blogTitleField.value.split(" ").join("-");
@@ -66,6 +67,7 @@ publishBtn.addEventListener('click', () => {
         db.collection("blogs").doc(docName).set({
             title: blogTitleField.value,
             article: articleFeild.value,
+            listings:listings.value,
             bannerImage: bannerPath,
             publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
         })

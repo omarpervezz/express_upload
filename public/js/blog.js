@@ -15,9 +15,10 @@ const setupBlog = (data) => {
     const blogTitle = document.querySelector('.title');
     const titleTag = document.querySelector('title');
     const publish = document.querySelector('.published');
+    const listed_by = document.querySelector('#listed_by');
     
     banner.style.backgroundImage = `url(${data.bannerImage})`;
-
+     listed_by.innerHTML += data.listings;
     titleTag.innerHTML += blogTitle.innerHTML = data.title;
     publish.innerHTML += data.publishedAt;
 
