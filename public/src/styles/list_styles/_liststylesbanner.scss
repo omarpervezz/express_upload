@@ -1,0 +1,24 @@
+.list__banner_ {
+  background: url(../assets/img/inner-page-banner-c.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom right;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+
+  .px-app {
+    width: 89%;
+    margin: 0 auto;
+    max-width: 1140px;
+    text-align: center;
+
+    h1 {
+      width: $full__width;
+      height: $full__height;
+      line-height: calc($full__height * 1.1);
+      color: $white;
+    }
+  }
+}

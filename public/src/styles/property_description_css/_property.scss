@@ -1,0 +1,159 @@
+.property__slider {
+  background: #f3f7fd;
+  padding-top: 0;
+  .container-fluid {
+    width: 100% !important;
+    display: flex;
+    justify-content: end;
+    .content {
+      width: 85%;
+    }
+  }
+}
+.elem,
+.elem * {
+  box-sizing: border-box;
+  margin: 0 !important;
+}
+.elem {
+  display: inline-block;
+  font-size: 0;
+  width: 33%;
+  background: #fff;
+  height: auto;
+  background-clip: padding-box;
+}
+.elem > span {
+  display: block;
+  cursor: pointer;
+  height: 0;
+  padding-bottom: 70%;
+  background-size: cover;
+  background-position: center center;
+}
+.lcl_fade_oc.lcl_pre_show #lcl_overlay,
+.lcl_fade_oc.lcl_pre_show #lcl_window,
+.lcl_fade_oc.lcl_is_closing #lcl_overlay,
+.lcl_fade_oc.lcl_is_closing #lcl_window {
+  opacity: 0 !important;
+}
+.lcl_fade_oc.lcl_is_closing #lcl_overlay {
+  -webkit-transition-delay: 0.15s !important;
+  transition-delay: 0.15s !important;
+}
+
+.property_description__ {
+  padding-top: 0;
+  background: #f3f7fd;
+
+  .bg-white {
+    .address {
+      h5 {
+        font-weight: 600;
+        font-size: 2.4rem;
+        &:hover {
+          color: #19469d;
+        }
+      }
+    }
+    .property__attribution {
+      font-size: 1.5rem;
+      font-weight: 400;
+      border-bottom: 1px solid #dedede;
+    }
+    .location__ {
+      span,
+      i {
+        color: #8690ae;
+        font-size: 1.5rem;
+      }
+      span {
+        font-weight: normal;
+      }
+    }
+    .price {
+      span {
+        font-size: 2.2rem;
+        color: #1266e3;
+        font-weight: 600;
+      }
+    }
+    .basic_information {
+      > div {
+        margin-right: 4rem;
+        i {
+          font-size: 1.5rem;
+          color: #8690ae;
+          background: whitesmoke;
+          border-radius: 2rem;
+          padding: 0.6rem 0.6rem;
+        }
+
+        span {
+          font-weight: normal;
+          font-size: 1.5rem;
+        }
+      }
+    }
+    .detailed_feature,
+    .general_feature,
+    .interior_feature,
+    .exterior_feature {
+      .border-bottom {
+        border-bottom: none !important;
+        margin: 0.4rem 0;
+        padding: 0.6rem 1.4rem;
+
+        &:hover {
+          background: $primary_two;
+
+          span {
+            color: $primary_one;
+          }
+        }
+      }
+      .fw-bold {
+        font-size: 1.5rem;
+        color: #08184b;
+        font-weight: 600 !important;
+      }
+    }
+    .description__ {
+      p {
+        font-size: 1.5rem;
+        font-weight: 300;
+      }
+    }
+    .gallery_ {
+      img {
+        width: 232px;
+      }
+    }
+  }
+  #map {
+    height: 400px; /* The height is 400 pixels */
+    width: 100%; /* The width is the width of the web page */
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .container-fluid {
+    justify-content: center !important;
+  }
+  .content {
+    width: 100% !important;
+    flex-direction: column;
+    align-items: center;
+  }
+  .content a {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 766px) {
+  .gallery_ img {
+    width: 500px;
+  }
+  .gallery_ .col-md-3 {
+    text-align: center;
+  }
+}

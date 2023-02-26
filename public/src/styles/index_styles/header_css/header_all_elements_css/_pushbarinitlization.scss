@@ -1,0 +1,92 @@
+[data-pushbar-id] {
+  background: #1b1b1b;
+  width: 70% !important;
+  z-index: 1002;
+}
+
+.push-container {
+  color: white;
+  .container-fluid {
+    height: 100%;
+    padding-top: 8rem;
+
+    .menu_logo__ {
+      padding: 3rem 0;
+      img {
+        width: 11rem;
+        margin-left: 3.4rem;
+      }
+      .right_realty_logo {
+        width: 7rem;
+      }
+    }
+    .top_menu_information__,
+    .bottom_menu_information__ {
+      margin-bottom: 4rem;
+      & > div {
+        width: 30%;
+        h5 {
+          font-size: 1.9rem;
+          color: rgb(255, 255, 255);
+          border-bottom: 0.1rem solid #707070;
+          padding-bottom: 1.2rem;
+          font-weight: 400;
+          letter-spacing: 0.1rem;
+          transition: color 0.4s ease-in-out;
+          &:hover {
+            color: teal;
+          }
+        }
+
+        ul {
+          margin-top: 1.4rem;
+          li {
+            a {
+              color: #b6b6b6;
+              font-size: 1.5rem;
+              font-weight: 400;
+              transition: 0.4s all ease-in-out;
+              &:hover {
+                color: #5f91ed;
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+#close {
+  background: transparent;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 1.4rem;
+  left: 1.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    font-size: 2.2rem;
+    color: #ffffffa8;
+  }
+  .close_text {
+    font-size: 1.1rem;
+  }
+}
+.pushbar_overlay {
+  background-color: #101112;
+}
+@media only screen and (max-width: 766px) {
+  [data-pushbar-id] {
+    width: 80% !important;
+  }
+  .top_menu_information__ div,
+  .bottom_menu_information__ div {
+    width: 100% !important;
+    margin-right: 1rem;
+  }
+}

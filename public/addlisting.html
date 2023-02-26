@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Listings - The Right REALTY Group</title>
+    <!-- favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./src/assets/logo_img/KakaoTalk_Photo_2023-02-10-00-16-41.png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!--font-awesome icon-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- <link href="./src/vendor_css/filepond.min.css" rel="stylesheet" />
+    <link
+      href="./src/vendor_css/filepond-plugin-image-preview.min.css"
+      rel="stylesheet"
+    /> -->
+    <link rel="stylesheet" href="./src/styles/style.css" />
+  </head>
+  <body>
+    <!--start header-->
+    <header class="animate__animated">
+      <div class="container-fluid">
+        <nav>
+          <div class="row_">
+            <div class="logo_contianer">
+              <div class="logo_">
+                <a href="index.html" class="d-flex align-items-center">
+                  <img
+                    src="./src/assets/logo_img/WHITE_TRRG2.png"
+                    alt="logo"
+                    class="img-fluid header_logo"
+                  />
+                </a>
+              </div>
+            </div>
+            <div
+              class="d-flex justify-content-end align-items-center menu_container"
+            >
+              <div class="nav_menu">
+                <ul class="d-flex desk_menu">
+                  <li class="d-flex flex-column">
+                    <a href="list.html" class="nav_item">REALTY Listing</a>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <a href="#" class="d-flex align-items-center nav_item"
+                      >Master Plan
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                    <!--sub menu-->
+                    <div class="dropdown-content d-flex flex-column">
+                      <a href="seller.html"> <span>Sellers</span></a>
+                      <a href="buyer.html"> <span>Buyers</span></a>
+                      <a href="#">
+                        <span>Pre-Listing Survey for Sellers</span>
+                      </a>
+                      <a href="#">
+                        <span>Pre-Appointment Survey for Buyers</span>
+                      </a>
+                    </div>
+                  </li>
+                  <li>
+                    <a class="d-flex align-items-center nav_item" href="#"
+                      >Why REALTY
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                    <!--sub menu-->
+                    <div class="dropdown-content d-flex flex-column">
+                      <a href="about.html">
+                        <span>About</span>
+                      </a>
+                      <a href="team.html">
+                        <span>Team</span>
+                      </a>
+                      <a href="#">
+                        <span>Videos</span>
+                      </a>
+                      <a href="contact.html">
+                        <span>Contact</span>
+                      </a>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="#" class="nav_item">Add Listings</a>
+                  </li>
+                  <li><a href="#" class="nav_item">Career</a></li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="hamburger" data-pushbar-target="mypushbar1">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+                <span>Menu</span>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!--end header-->
+    <!--mobile menu start-->
+    <div
+      data-pushbar-id="mypushbar1"
+      data-pushbar-direction="right"
+      class="push-container push__bar"
+    >
+      <div class="d-flex align-items-center h-100 overflow-hidden">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col col-12">
+              <div class="menu_logo__">
+                <img
+                  src="./src/assets/logo_img/the_right_realty_group.jpeg"
+                  alt="the_right_realty_group"
+                  class="img-fluid right_realty_logo"
+                />
+                <img
+                  src="./src/assets/logo_img/cropped-eXp-Realty-Color-2.png"
+                  alt="exp_logo"
+                  class="img-fluid exp_logo"
+                />
+              </div>
+            </div>
+            <div class="col col-12 mobile_menu_container">
+              <div class="d-flex flex-column mobile_menu w-75">
+                <div
+                  class="d-flex justify-content-between top_menu_information__"
+                >
+                  <div>
+                    <h5>REALTY Listing</h5>
+                    <ul>
+                      <li><a href="list.html">REALTY Listing</a></li>
+                      <li><a href="recent.html">Recent Sell</a></li>
+                      <li><a href="#">Recent added</a></li>
+                      <li>
+                        <a href="#">Pre-Appointment Survey for Buyers</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5>Master Plan</h5>
+                    <ul>
+                      <li><a href="seller.html">Sellers</a></li>
+                      <li><a href="buyer.html">Buyers</a></li>
+                      <li><a href="#">Pre-Listing Survey for Sellers</a></li>
+                      <li>
+                        <a href="#">Pre-Appointment Survey for Buyers</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5>Why REALTY</h5>
+                    <ul>
+                      <li><a href="about.html">About</a></li>
+                      <li><a href="team.html">Team</a></li>
+                      <li><a href="#">Videos</a></li>
+                      <li><a href="#">Contact</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- <hr class="pb-4" /> -->
+                <div
+                  class="d-flex justify-content-between bottom_menu_information__"
+                >
+                  <div>
+                    <h5>Testimonials</h5>
+                  </div>
+                  <div>
+                    <h5>Career</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button id="close" type="button" data-pushbar-close>
+        <i class="fa-solid fa-xmark"></i>
+        <span class="close_text">close</span>
+      </button>
+    </div>
+    <!--mobile menu end-->
+    <!--main start-->
+    <main>
+      <!--seller banner start-->
+      <section class="s__banner height-50">
+        <div class="overlay__"></div>
+        <div class="bottom_bg"></div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <img
+                src="./src/assets/logo_img/WHITE_TRRG2.png"
+                alt="banner_logo"
+                class="img-fluid banner_logo animate__animated"
+                data-scroll
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--seller banner end-->
+      <!--banner upload-->
+
+      <section class="banner_upload">
+        <div class="banner">
+          <input type="file" accept="image/*" id="banner-upload" hidden />
+          <label for="banner-upload" class="banner-upload-btn"
+            ><img src="./src/assets/img/upload.png" alt="upload banner"
+          /></label>
+        </div>
+      </section>
+      <div class="blog">
+        <textarea
+          type="text"
+          class="article"
+          placeholder="upload property image here...."
+        ></textarea>
+        <input type="file" accept="image/*" id="image-upload" hidden />
+        <label for="image-upload" class="btn grey upload-btn"
+          >Upload property image</label
+        >
+      </div>
+      <!--banner upload-->
+      <!--take input from user-->
+      <section class="gradient-custom-2">
+        <div class="container py-5">
+          <div
+            class="row d-flex justify-content-center align-items-center h-100"
+          >
+            <div class="col-12">
+              <div class="card card-registration card-registration-2">
+                <div class="card-body p-0">
+                  <form id="form__">
+                    <div class="row g-0">
+                      <div class="col-lg-6">
+                        <div class="p-5">
+                          <h3 class="fw-bold mb-5 title_card_registration_">
+                            Listings General Infomation
+                          </h3>
+                          <div class="row">
+                            <div class="col-md-6 mb-4 pb-2">
+                              <div class="form-outline">
+                                <label class="form-label" for="property_name"
+                                  >Property Name:</label
+                                >
+                                <input
+                                  type="text"
+                                  required
+                                  id="property_name"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-6 mb-4 pb-2">
+                              <div class="form-outline">
+                                <label class="form-label" for="property_price"
+                                  >Property Price:</label
+                                >
+                                <input
+                                  type="number"
+                                  id="property_price"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="mb-4 pb-2">
+                                <div class="form-outline">
+                                  <label class="form-label" for="beds_"
+                                    >Beds</label
+                                  >
+                                  <input
+                                    type="number"
+                                    id="beds_"
+                                    class="form-control form-control-lg"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="mb-4 pb-2">
+                                <div class="form-outline">
+                                  <label class="form-label" for="baths_"
+                                    >Baths</label
+                                  >
+                                  <input
+                                    type="number"
+                                    id="baths_"
+                                    class="form-control form-control-lg"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="mb-4 pb-2">
+                                <div class="form-outline">
+                                  <label
+                                    class="form-label"
+                                    for="property_address"
+                                    >Property Adress:</label
+                                  >
+                                  <input
+                                    type="text"
+                                    required
+                                    id="property_address"
+                                    class="form-control form-control-lg"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label class="form-label" for="lot_size"
+                                  >Lot Size</label
+                                >
+                              </div>
+                              <input
+                                type="number"
+                                id="lot_size"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label
+                                  class="form-label"
+                                  for="property__description"
+                                  >Description</label
+                                >
+                              </div>
+                              <input
+                                type="text"
+                                required
+                                id="property__description"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label class="form-label" for="senior_community"
+                                  >Senior Community Y/N</label
+                                >
+                              </div>
+                              <input
+                                type="text"
+                                required
+                                id="senior_community"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label class="form-label" for="spa_features"
+                                  >Spa Features</label
+                                >
+                              </div>
+                              <input
+                                type="text"
+                                required
+                                id="spa_features"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label
+                                  class="form-label"
+                                  for="special_listings_conditions"
+                                  >Special Listing Conditions</label
+                                >
+                              </div>
+                              <input
+                                type="text"
+                                required
+                                id="special_listings_conditions"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label
+                                  class="form-label"
+                                  for="property__description"
+                                  >Status</label
+                                >
+                              </div>
+                              <input
+                                type="text"
+                                required
+                                id="property__description"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label class="form-label" for="view__"
+                                  >View</label
+                                >
+                              </div>
+                              <input
+                                type="text"
+                                required
+                                id="view__"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label class="form-label" for="zoning__"
+                                  >Zoning</label
+                                >
+                              </div>
+                              <input
+                                type="text"
+                                required
+                                id="zoning__"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label class="form-label" for="air_conditining_"
+                                  >Air Conditioning Y/N
+                                </label>
+                              </div>
+                              <input
+                                type="text"
+                                required
+                                id="air_conditining_"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label class="form-label" for="common_walls"
+                                  >Common Walls</label
+                                >
+                              </div>
+                              <input
+                                type="text"
+                                required
+                                id="common_walls"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label
+                                  class="form-label"
+                                  for="fireplace_features"
+                                  >Fireplace Features</label
+                                >
+                              </div>
+                              <input
+                                type="text"
+                                required
+                                id="fireplace_features"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label class="form-label" for="firepalce_y_n"
+                                  >Fireplace Y/N</label
+                                >
+                              </div>
+                              <input
+                                type="text"
+                                required
+                                id="firepalce_y_n"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label class="form-label" for="furnished__"
+                                  >Furnished Y/N</label
+                                >
+                              </div>
+                              <input
+                                type="text"
+                                required
+                                id="furnished__"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label class="form-label" for="heating_y_N"
+                                  >Heating Y/N</label
+                                >
+                              </div>
+                              <input
+                                type="text"
+                                required
+                                id="heating_y_N"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label class="form-label" for="laundry_features"
+                                  >Laundry Features</label
+                                >
+                              </div>
+                              <input
+                                type="text"
+                                required
+                                id="laundry_features"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label class="form-label" for="living_area_"
+                                  >Living Area</label
+                                >
+                              </div>
+                              <input
+                                type="number"
+                                id="living_area_"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label class="form-label" for="fenching_"
+                                  >Fencing</label
+                                >
+                              </div>
+                              <input
+                                type="text"
+                                required
+                                id="fenching_"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label
+                                  class="form-label"
+                                  for="foundation_details_"
+                                  >Foundation Details</label
+                                >
+                              </div>
+                              <input
+                                type="text"
+                                required
+                                id="foundation_details_"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label class="form-label" for="lot_dimensions_"
+                                  >Lot Dimensions</label
+                                >
+                              </div>
+                              <input
+                                type="text"
+                                required
+                                id="lot_dimensions_"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label class="form-label" for="lot_size_area"
+                                  >Lot Size Area</label
+                                >
+                              </div>
+                              <input
+                                type="number"
+                                id="lot_size_area"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label class="form-label" for="lot_size_units_"
+                                  >Lot Size Units</label
+                                >
+                              </div>
+                              <input
+                                type="text"
+                                required
+                                id="lot_size_units_"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label
+                                  class="form-label"
+                                  for="parking_features_"
+                                  >Parking Features
+                                </label>
+                              </div>
+                              <input
+                                type="text"
+                                required
+                                id="parking_features_"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                            <div class="col-md-6 mt-4 pb-2 mb-md-0 pb-md-0">
+                              <div class="form-outline">
+                                <label class="form-label" for="total_parking"
+                                  >Total Parking</label
+                                >
+                              </div>
+                              <input
+                                type="number"
+                                id="total_parking"
+                                class="form-control form-control-lg"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 bg-indigo text-white">
+                        <div class="p-5">
+                          <h3 class="fw-bold mb-5 title_card_registration_">
+                            Listings Details
+                          </h3>
+
+                          <div class="row">
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label class="form-label" for="id__">ID#</label>
+                                <input
+                                  type="number"
+                                  id="id__"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label class="form-label" for="area__"
+                                  >Area</label
+                                >
+                                <input
+                                  type="text"
+                                  required
+                                  id="area__"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label class="form-label" for="country__"
+                                  >County</label
+                                >
+                                <input
+                                  type="text"
+                                  required
+                                  id="country__"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label class="form-label" for="zip__"
+                                  >Zip</label
+                                >
+                                <input
+                                  type="number"
+                                  id="zip__"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label class="form-label" for="style__"
+                                  >Style</label
+                                >
+                                <input
+                                  type="text"
+                                  required
+                                  id="style__"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label class="form-label" for="garage__"
+                                  >Garage</label
+                                >
+                                <input
+                                  type="number"
+                                  id="garage__"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label class="form-label" for="washroom__"
+                                  >Washroom</label
+                                >
+                                <input
+                                  type="number"
+                                  id="washroom__"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label class="form-label" for="accessbility__"
+                                  >Accessibility</label
+                                >
+                                <input
+                                  type="text"
+                                  required
+                                  id="accessbility__"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label class="form-label" for="appliances__"
+                                  >Appliances</label
+                                >
+                                <input
+                                  type="text"
+                                  required
+                                  id="appliances__"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label class="form-label" for="architectural__"
+                                  >Architectural Style</label
+                                >
+                                <input
+                                  type="text"
+                                  required
+                                  id="architectural__"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label class="form-label" for="cooling__"
+                                  >Cooling</label
+                                >
+                                <input
+                                  type="text"
+                                  required
+                                  id="cooling__"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label class="form-label" for="heating__"
+                                  >Heating</label
+                                >
+                                <input
+                                  type="text"
+                                  required
+                                  id="heating__"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label
+                                  class="form-label"
+                                  for="interior__features"
+                                  >Interior Features</label
+                                >
+                                <input
+                                  type="text"
+                                  required
+                                  id="interior__features"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label class="form-label" for="levels__"
+                                  >Levels</label
+                                >
+                                <input
+                                  type="text"
+                                  required
+                                  id="levels__"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label class="form-label" for="listing_agent"
+                                  >Listing Agent</label
+                                >
+                                <input
+                                  type="text"
+                                  required
+                                  id="listing_agent"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label
+                                  class="form-label"
+                                  for="listing_agent_state_license"
+                                  >Listing Agent State License</label
+                                >
+                                <input
+                                  type="number"
+                                  id="listing_agent_state_license"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label class="form-label" for="mls_area__"
+                                  >MLS Area</label
+                                >
+                                <input
+                                  type="text"
+                                  required
+                                  id="mls_area__"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label
+                                  class="form-label"
+                                  for="occupancy_description"
+                                  >Occupancy Description</label
+                                >
+                                <input
+                                  type="number"
+                                  id="occupancy_description"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label class="form-label" for="pool_feature"
+                                  >Pool Features</label
+                                >
+                                <input
+                                  type="text"
+                                  required
+                                  id="pool_feature"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label
+                                  class="form-label"
+                                  for="property_condition_"
+                                  >Property Condition</label
+                                >
+                                <input
+                                  type="number"
+                                  id="property_condition_"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label class="form-label" for="property_type"
+                                  >Property Type</label
+                                >
+                                <input
+                                  type="text"
+                                  required
+                                  id="property_type"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label class="form-label" for="roof"
+                                  >Roof</label
+                                >
+                                <input
+                                  type="number"
+                                  id="roof"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label
+                                  class="form-label"
+                                  for="property_subtype_additional"
+                                  >Property Sub Type Additional</label
+                                >
+                                <input
+                                  type="text"
+                                  required
+                                  id="property_subtype_additional"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-6 mb-4 pb-2">
+                              <div class="form-outline form-white">
+                                <label
+                                  class="form-label"
+                                  for="property_subtype_"
+                                  >Property SubType</label
+                                >
+                                <input
+                                  type="number"
+                                  id="property_subtype_"
+                                  class="form-control form-control-lg"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <button
+                            type="submit"
+                            class="btn_ add_listings_ publish-btn"
+                          >
+                            Add Listings
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--take input from user-->
+
+      <!--have a question-->
+      <section class="question__">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <h2>Have a question? Let us know</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--have a question-->
+      <!--social media start-->
+      <div class="social_media">
+        <ul>
+          <li>
+            <a href="#"
+              ><img
+                src="./src/assets/social_media_icon/Facebook.png"
+                alt="facebook"
+                class="img-fluid"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img
+                src="./src/assets/social_media_icon/LinkedIn.png"
+                alt="linkedin"
+                class="img-fluid"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img
+                src="./src/assets/social_media_icon/Twitter.png"
+                alt="twitter"
+            /></a>
+          </li>
+          <li>
+            <a href="#" class="instragram_"
+              ><img
+                src="./src/assets/social_media_icon/Instagram.png"
+                alt="instragram"
+                class="img-fluid"
+            /></a>
+          </li>
+        </ul>
+      </div>
+      <!--social media end-->
+    </main>
+    <!--main end-->
+    <!--footer-->
+    <footer>
+      <!--contact us-->
+      <div class="contact_form_wrapper">
+        <div class="">
+          <div class="row">
+            <div class="col-12">
+              <div class="row">
+                <div class="col-md-8 col-lg-8 first_element">
+                  <div class="form_content c__1 animate__animated" data-scroll>
+                    <div class="container__box">
+                      <form class="contact_form">
+                        <fieldset>
+                          <legend class="legend_">
+                            💙 Hello, Lets get in touch
+                          </legend>
+                          <input
+                            type="text"
+                            required
+                            id="name"
+                            name="name"
+                            placeholder="Your Name"
+                          /><br />
+                          <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Your Email"
+                          /><br />
+                          <input
+                            type="number"
+                            id="phone"
+                            name="phone"
+                            placeholder="Your Number"
+                          /><br />
+                        </fieldset>
+                        <fieldset>
+                          <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Your Message"
+                          ></textarea
+                          ><br /><br />
+                        </fieldset>
+
+                        <button type="submit" class="btn_ submit_button__">
+                          Send Message
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-lg-4 second_element">
+                  <div
+                    class="form_infromation__ c__2 animate__animated"
+                    data-scroll
+                  >
+                    <div>
+                      <h2 class="forminformation__title">
+                        We'd love to <br />
+                        Hear <span>from you</span>
+                      </h2>
+                      <p class="short_title">
+                        The Right REALTY Group | eXp Realty of California Inc.
+                      </p>
+                      <p class="form_email__">info@jamesw.in</p>
+                      <p>Phone: (714) 336-5222</p>
+                      <div class="footer_logo">
+                        <img
+                          src="./src/assets/logo_img/the_right_realty_group.jpeg"
+                          alt="logo"
+                          class="img-fluid footer_logo_1"
+                        />
+                        <img
+                          src="./src/assets/logo_img/cropped-eXp-Realty-Color-2.png"
+                          alt="logo"
+                          class="img-fluid footer_logo_2"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--contact us-->
+    </footer>
+    <!--footer-->
+
+    <!--back to top-->
+    <div class="back_to_top_container">
+      <a id="back_top"></a>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+    <script src="./src/vendor_js/jquery.fittext.js"></script>
+    <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+    <script src="./src/js/pushbar.js"></script>
+    <!-- <script src="./src/vendor_js/filepond-plugin-image-preview.min.js"></script>
+    <script src="./src/vendor_js/filepond.min.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+    <script src="./js/firebase.js"></script>
+    <script src="./js/addlisting.js"></script>
+    <script defer src="./main.js"></script>
+
+    <script></script>
+  </body>
+</html>

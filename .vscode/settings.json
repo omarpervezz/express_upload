@@ -1,0 +1,26 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.tslint": true,
+    "source.organizeImports": true
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "javascript.validate.enable": false,
+  "typescript.validate.enable": false,
+  "workbench.colorTheme": "Gatito Theme",
+  "editor.fontSize": 17,
+  "workbench.iconTheme": "material-icon-theme",
+  "files.autoSave": "onFocusChange",
+  "editor.wordWrap": "on",
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "git.ignoredRepositories": [
+    "c:\\Users\\progr\\.vscode\\extensions\\stepsize.stepsize-1.0.1\\resources\\demo-repository"
+  ],
+  "editor.fontFamily": "Fira Code Light",
+  "editor.fontWeight": "300",
+  "liveServer.settings.port": 5501
+}

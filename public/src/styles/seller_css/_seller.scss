@@ -1,0 +1,41 @@
+.selling_master {
+  .bottom_bg {
+    background-color: rgb(244 250 255);
+  }
+}
+
+.the_master_plan {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(7, 7, 7);
+  padding: 6rem 0px;
+  background-color: rgb(244 250 255);
+}
+
+.our_goal {
+  background-color: #eceff1;
+  padding: 8rem 0;
+  position: relative;
+
+  .container-fluid {
+    width: 90% !important;
+  }
+
+  h2,
+  p,
+  h5 {
+    color: #1b1b1b;
+  }
+  img {
+    width: 85rem;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+}
