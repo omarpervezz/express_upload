@@ -12,35 +12,12 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(initial_path, "index.html"));
 });
 
-app.get("/editor", (req, res) => {
-  res.sendFile(path.join(initial_path, "editor.html"));
-});
 app.get("/addlisting", (req, res) => {
   res.sendFile(path.join(initial_path, "addlisting.html"));
 });
 
 // upload link
 app.post("/upload", (req, res) => {
-  let file = req.files.image;
-  let date = new Date();
-  // image name
-  let imagename = date.getDate() + date.getTime() + file.name;
-  // image upload path
-  let path = "public/uploads/" + imagename;
-
-  // create upload
-  file.mv(path, (err, result) => {
-    if (err) {
-      throw err;
-    } else {
-      // our image upload path
-      res.json(`uploads/${imagename}`);
-    }
-  });
-});
-
-// upload link
-app.post("/uploadnew", (req, res) => {
   let file = req.files.image;
   let date = new Date();
   // image name
