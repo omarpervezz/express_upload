@@ -91,7 +91,7 @@ const addDescription = (element, data) => {
             <span class="property__address">${data.property_address}</span>
           </div>
           <div class="price mb-4">
-            <span>$</span>&nbps;<span id="property_price">${data.property_price}</span>
+            <span>$</span> <span id="property_price">${data.property_price}</span>
           </div>
           <div class="basic_information d-flex flex-row gap-2">
             <div>
@@ -141,6 +141,12 @@ const addDescription = (element, data) => {
             <span>${data.country__}</span>
           </div>
           <div
+          class="d-flex flex-row justify-content-between align-items-center border-bottom"
+        >
+          <span class="fw-bold">City</span>
+          <span>${data.country__}</span>
+        </div>
+          <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Area</span>
@@ -180,7 +186,12 @@ const addDescription = (element, data) => {
             <span class="fw-bold">Full Bathrooms</span>
             <span>${data.baths}</span>
           </div>
-         
+          <div
+            class="d-flex flex-row justify-content-between align-items-center border-bottom"
+          >
+            <span class="fw-bold">Half Bathrooms</span>
+            <span>${data.baths}</span>
+          </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
