@@ -26,7 +26,7 @@ const createBlog = (blog) => {
       <span>${data.baths} baths</span>
     </figcaption>
   </figure>
-</a>;t
+</a>
 
     `;
 };

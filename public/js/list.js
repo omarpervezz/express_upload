@@ -1,7 +1,6 @@
 const recentListed = document.querySelector(".col__1");
 
 db.collection("blogs")
-  .limit(9)
   .get()
   .then((blogs) => {
     blogs.forEach((blog) => {

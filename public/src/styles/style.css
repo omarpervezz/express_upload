@@ -902,13 +902,13 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
   padding: 15px 15px 15px;
   width: 100%;
   font-size: 16px;
-  color: #f3f7fd;
+  color: #1b1b1b;
   opacity: 1;
-  background: #1b1b1b;
+  background: #f3f7fd;
   transition: 0.3s all;
   opacity: 0;
   visibility: hidden;
-  bottom: -100%;
+  bottom: -6rem;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -1154,13 +1154,13 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
   height: 50vh;
 }
 .master_plan_ .container-fluid .listing_buying .listing_homes {
-  background: linear-gradient(hsla(0, 0%, 0%, 0.432), hsla(0, 0%, 0%, 0.432)), url(https://images.pexels.com/photos/6631793/pexels-photo-6631793.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load);
+  background: linear-gradient(hsla(0, 0%, 0%, 0.432), hsla(0, 0%, 0%, 0.432)), url("../assets/img/bannerbg2.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .master_plan_ .container-fluid .listing_buying .buying_homes {
-  background: linear-gradient(hsla(0, 0%, 0%, 0.192), hwb(0 0% 100%/0.24)), url(https://images.pexels.com/photos/3288100/pexels-photo-3288100.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background: linear-gradient(hsla(0, 0%, 0%, 0.192), hwb(0 0% 100%/0.24)), url("../assets/img/bannerbg_1.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

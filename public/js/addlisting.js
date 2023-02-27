@@ -78,26 +78,29 @@ uploadInput.addEventListener("change", () => {
 });
 
 const uploadImage = (uploadFile, uploadType) => {
-  const [file] = uploadFile.files;
-  if (file && file.type.includes("image")) {
-    const formdata = new FormData();
-    formdata.append("image", file);
+  // const [file] = uploadFile.files;
 
-    fetch("/upload", {
-      method: "post",
-      body: formdata,
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (uploadType == "image") {
-          addImage(data, file.name);
-        } else {
-          bannerPath = `${location.origin}/${data}`;
-          banner.style.backgroundImage = `url("${bannerPath}")`;
-        }
-      });
-  } else {
-    alert("upload Image only");
+  for (let x = 0; x < uploadFile.files.length; x++) {
+    if (uploadFile.files) {
+      const formdata = new FormData();
+      formdata.append("image", uploadFile.files[x]);
+
+      fetch("/upload", {
+        method: "post",
+        body: formdata,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (uploadType == "image") {
+            addImage(data, uploadFile.files.name);
+          } else {
+            bannerPath = `${location.origin}/${data}`;
+            banner.style.backgroundImage = `url("${bannerPath}")`;
+          }
+        });
+    } else {
+      alert("upload Image only");
+    }
   }
 };
 

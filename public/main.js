@@ -35,6 +35,8 @@ $(document).ready(function () {
         "https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1481&q=80",
         "./src/assets/img/slide-3.jpg",
         "./src/assets/img/slide-8.jpg",
+        "./src/assets/img/banner3.jpg",
+        "./src/assets/img/banner4.jpg",
       ],
       initialBackground:
         "https://images.unsplash.com/photo-1614846384571-1e31322ed3a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
@@ -100,7 +102,7 @@ $(document).ready(function () {
       autoPlay: false,
     });
   });
-
+  // back to top
   $(function () {
     var btn = $("#back_top");
 
@@ -141,7 +143,7 @@ $(document).ready(function () {
       }
     });
   });
-
+  //gallery slider */
   $(function () {
     lc_lightbox(".elem", {
       // whether to display a single element or compose a gallery
