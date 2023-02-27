@@ -18,14 +18,15 @@ const setupListings = (data) => {
   const propertyInformation = document.querySelector(
     ".property_description__ .property_information"
   );
-  addImg(content, data.article);
   addDescription(propertyInformation, data);
+  const listing_gallery = document.querySelector(".listing_gallery");
+  addImg(content, data, data.article, listing_gallery);
 };
 
-const addImg = (ele, data) => {
-  data = data.split("\n").filter((item) => item.length);
+const addImg = (ele, data, article, l_gallery) => {
+  article = article.split("\n").filter((item) => item.length);
 
-  data.forEach((item) => {
+  article.forEach((item) => {
     //checking for image format
     if (item[0] == "!" && item[1] == "[") {
       let seperator;
@@ -46,9 +47,8 @@ const addImg = (ele, data) => {
             <a
         class="elem"
         href="${src}"
-        title="image 1"
-        data-lcl-txt="lorem ipsum dolor sit amet"
-        data-lcl-author="someone"
+        data-lcl-txt="${data.property_address}"
+        data-lcl-author="${data.listing_agent}"
         data-lcl-thumb="${src}"
         >
         <span
@@ -57,6 +57,16 @@ const addImg = (ele, data) => {
         "
         ></span>
         </a>
+            `;
+      l_gallery.innerHTML += `
+            
+      <div class="col-12 col-md-3">
+      <img
+        src="${src}"
+        alt="${alt}"
+      />
+    </div>
+            
             `;
     } else {
       ele.innerHTML += `<p>${item}</p>`;
@@ -170,12 +180,7 @@ const addDescription = (element, data) => {
             <span class="fw-bold">Full Bathrooms</span>
             <span>${data.baths}</span>
           </div>
-          <div
-            class="d-flex flex-row justify-content-between align-items-center border-bottom"
-          >
-            <span class="fw-bold">Garage</span>
-            <span>${data.garage__}</span>
-          </div>
+         
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
@@ -188,12 +193,7 @@ const addDescription = (element, data) => {
             <span class="fw-bold">Lot Size</span>
             <span>${data.lot_size} SqFt</span>
           </div>
-          <div
-            class="d-flex flex-row justify-content-between align-items-center border-bottom"
-          >
-            <span class="fw-bold">Washroom</span>
-            <span>3</span>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -206,7 +206,7 @@ const addDescription = (element, data) => {
           >
             <span class="fw-bold">2/24/2023</span>
             <div>
-              <span>Listed $</span>&nbsp;<span>1,035,000</span>
+              <span>Listed $</span>&nbsp;<span>${data.property_price}</span>
             </div>
           </div>
         </div>
@@ -219,148 +219,148 @@ const addDescription = (element, data) => {
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
-            <span class="fw-bold">Accessibility</span>
+            <span class="fw-bold">${data.accessbility__}</span>
             <span>None</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Appliances</span>
-            <span>Microwave</span>
+            <span>${data.appliances__}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Architectural Style</span>
-            <span>Traditional</span>
+            <span>${data.architectural__}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Cooling</span>
-            <span>Central Air</span>
+            <span>${data.cooling__}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Heating</span>
-            <span>Central</span>
+            <span>${data.heating__}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Interior Features</span>
             <div>
-              <span id="property_price">Walk-In Closet(s)</span>
+              <span id="property_price">${data.interior__features}</span>
             </div>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Levels</span>
-            <span>Multi/Split</span>
+            <span>${data.levels__}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Listing Agent</span>
-            <span>Tanee McCall - BRE#02142709</span>
+            <span>${data.listing_agent}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Listing Agent State License</span>
-            <span>02142709</span>
+            <span>${data.listing_agent_state_license}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Lot Size Square Feet</span>
-            <span>6147</span>
+            <span>${data.lot_size}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">MLS Area</span>
-            <span>C36 - Metropolitan Southwest</span>
+            <span>${data.mls_area__}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Occupancy Description</span>
-            <span>Vacant</span>
+            <span>${data.occupancy_description}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Pool Features </span>
-            <span>None</span>
+            <span>${data.pool_feature}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Property Condition</span>
-            <span>Updated/Remodeled</span>
+            <span>${data.property_condition_}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Property Sub Type Additional </span>
-            <span>Single Family Residence</span>
+            <span>${data.property_subtype_additional}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Property SubType</span>
-            <span>Single Family Residence</span>
+            <span>${data.property_subtype_}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Property Type </span>
-            <span>Residential</span>
+            <span>${data.property_type}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Roof </span>
-            <span>Composition, Shingle</span>
+            <span>${data.roof}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Senior Community Y/N </span>
-            <span>No</span>
+            <span>${data.senior_community}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Spa Features </span>
-            <span>None</span>
+            <span>${data.spa_features}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Special Listing Conditions </span>
-            <span>Standard</span>
+            <span>${data.special_listings_conditions}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Status </span>
-            <span>Active</span>
+            <span>${data.property_status}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">View </span>
-            <span>None</span>
+            <span>${data.view__}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Zoning </span>
-            <span>LAR1</span>
+            <span>${data.zoning__}</span>
           </div>
         </div>
       </div>
@@ -375,63 +375,63 @@ const addDescription = (element, data) => {
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Air Conditioning Y/N</span>
-            <span>Yes</span>
+            <span>${data.air_conditining_}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Common Walls</span>
-            <span>No Common Walls</span>
+            <span>${data.common_walls}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Fireplace Features</span>
-            <span>Family Room, Living Room</span>
+            <span>${data.fireplace_features}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Fireplace Y/N</span>
-            <span>Yes</span>
+            <span>${data.firepalce_y_n}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Full Baths</span>
-            <span>3</span>
+            <span>${data.baths}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Furnished Y/N</span>
             <div>
-              <span id="property_price">Unfurnished</span>
+              <span id="property_price">${data.furnished__}</span>
             </div>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Heating Y/N</span>
-            <span>Yes</span>
+            <span>${data.heating_y_N}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Laundry Features</span>
-            <span>TLaundry Room</span>
+            <span>${data.laundry_features}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Total Baths</span>
-            <span>3</span>
+            <span>${data.baths}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Total Bedrooms</span>
-            <span>4</span>
+            <span>${data.beds}</span>
           </div>
         </div>
       </div>
@@ -446,63 +446,63 @@ const addDescription = (element, data) => {
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Living Area</span>
-            <span>1928</span>
+            <span>${data.living_area_}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Fencing</span>
-            <span>Brick</span>
+            <span>${data.fenching_}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Foundation Details</span>
-            <span>Raised</span>
+            <span>${data.foundation_details_}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Lot Dimensions</span>
-            <span>46x135</span>
+            <span>${data.lot_dimensions_}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Lot Size Acres</span>
-            <span>0.1411</span>
+            <span>${data.area__}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Lot Size Area</span>
             <div>
-              <span id="property_price">6147</span>
+              <span id="property_price">${data.lot_size_area}</span>
             </div>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Lot Size Units</span>
-            <span>Square Feet</span>
+            <span>${data.lot_size_units_}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Parking Features</span>
-            <span>Door-Multi, Garage</span>
+            <span>${data.parking_features_}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Total Parking</span>
-            <span>2</span>
+            <span>${data.total_parking}</span>
           </div>
           <div
             class="d-flex flex-row justify-content-between align-items-center border-bottom"
           >
             <span class="fw-bold">Total Bedrooms</span>
-            <span>4</span>
+            <span>${data.beds}</span>
           </div>
         </div>
       </div>
@@ -530,61 +530,11 @@ const addDescription = (element, data) => {
       </div>
     </div>
     <div class="row bg-white p-5 mb-5">
-      <div class="col-12">
-        <div class="location__ d-flex flex-column">
-          <h4 class="mb-4 fw-bold">Location</h4>
-          <div id="map"></div>
-        </div>
-      </div>
-    </div>
-    <div class="row bg-white p-5 mb-5">
       <div class="col-12 gallery_">
         <h4 class="mb-4 fw-bold">Gallery</h4>
         <div
-          class="row flex-wrap justify-content-center justify-content-md-start"
+          class="row flex-wrap justify-content-center justify-content-md-start listing_gallery"
         >
-          <div class="col-12 col-md-3">
-            <img
-              src="http://themestarz.net/html/zoner/assets/img/properties/property-detail-02.jpg"
-              alt="gallery"
-            />
-          </div>
-          <div class="col-12 col-md-3">
-            <img
-              src="http://themestarz.net/html/zoner/assets/img/properties/property-detail-02.jpg"
-              alt="gallery"
-            />
-          </div>
-          <div class="col-12 col-md-3">
-            <img
-              src="http://themestarz.net/html/zoner/assets/img/properties/property-detail-02.jpg"
-              alt="gallery"
-            />
-          </div>
-          <div class="col-12 col-md-3">
-            <img
-              src="http://themestarz.net/html/zoner/assets/img/properties/property-detail-02.jpg"
-              alt="gallery"
-            />
-          </div>
-          <div class="col-12 col-md-3">
-            <img
-              src="http://themestarz.net/html/zoner/assets/img/properties/property-detail-02.jpg"
-              alt="gallery"
-            />
-          </div>
-          <div class="col-12 col-md-3">
-            <img
-              src="http://themestarz.net/html/zoner/assets/img/properties/property-detail-02.jpg"
-              alt="gallery"
-            />
-          </div>
-          <div class="col-12 col-md-3">
-            <img
-              src="http://themestarz.net/html/zoner/assets/img/properties/property-detail-02.jpg"
-              alt="gallery"
-            />
-          </div>
         </div>
       </div>
     </div>
@@ -592,3 +542,19 @@ const addDescription = (element, data) => {
     
     `;
 };
+
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  const uluru = { lat: -25.344, lng: 131.031 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: uluru,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+  });
+}

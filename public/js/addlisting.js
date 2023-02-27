@@ -1,4 +1,4 @@
-const articleFeild = document.querySelector(".article");
+const img_upload_field = document.querySelector(".img_upload_field");
 const propertyName = document.querySelector("#property_name");
 const property_price = document.querySelector("#property_price");
 const property_address = document.querySelector("#property_address");
@@ -11,7 +11,7 @@ const spa_features = document.querySelector("#spa_features");
 const special_listings_conditions = document.querySelector(
   "#special_listings_conditions"
 );
-
+const property_status = document.querySelector("#property_status");
 const view__ = document.querySelector("#view__");
 const zoning__ = document.querySelector("#zoning__");
 const air_conditining_ = document.querySelector("#air_conditining_");
@@ -35,8 +35,6 @@ const area__ = document.querySelector("#area__");
 const country__ = document.querySelector("#country__");
 const zip__ = document.querySelector("#zip__");
 const style__ = document.querySelector("#style__");
-const garage__ = document.querySelector("#garage__");
-const washroom__ = document.querySelector("#washroom__");
 
 const accessbility__ = document.querySelector("#accessbility__");
 const appliances__ = document.querySelector("#appliances__");
@@ -104,12 +102,12 @@ const uploadImage = (uploadFile, uploadType) => {
 };
 
 const addImage = (imagepath, alt) => {
-  let curPos = articleFeild.selectionStart;
+  let curPos = img_upload_field.selectionStart;
   let textToInsert = `\r![${alt}](${imagepath})\r`;
-  articleFeild.value =
-    articleFeild.value.slice(0, curPos) +
+  img_upload_field.value =
+    img_upload_field.value.slice(0, curPos) +
     textToInsert +
-    articleFeild.value.slice(curPos);
+    img_upload_field.value.slice(curPos);
 };
 
 let months = [
@@ -129,7 +127,7 @@ let months = [
 
 form__.addEventListener("submit", (e) => {
   e.preventDefault();
-  if (articleFeild.value.length && propertyName.value.length) {
+  if (img_upload_field.value.length && propertyName.value.length) {
     // generating id
     let letters = "abcdefghijklmnopqrstuvwxyz";
     let propertyNameChecking = propertyName.value.split(" ").join("-");
@@ -146,7 +144,7 @@ form__.addEventListener("submit", (e) => {
     db.collection("blogs")
       .doc(docName)
       .set({
-        article: articleFeild.value,
+        article: img_upload_field.value,
         bannerImage: bannerPath,
         publishedAt: `${date.getDate()} ${
           months[date.getMonth()]
@@ -161,6 +159,7 @@ form__.addEventListener("submit", (e) => {
         senior_community: senior_community.value,
         spa_features: spa_features.value,
         special_listings_conditions: special_listings_conditions.value,
+        property_status: property_status.value,
         view__: view__.value,
         zoning__: zoning__.value,
         air_conditining_: air_conditining_.value,
@@ -183,8 +182,6 @@ form__.addEventListener("submit", (e) => {
         country__: country__.value,
         zip__: zip__.value,
         style__: style__.value,
-        garage__: garage__.value,
-        washroom__: washroom__.value,
         accessbility__: accessbility__.value,
         appliances__: appliances__.value,
         architectural__: architectural__.value,

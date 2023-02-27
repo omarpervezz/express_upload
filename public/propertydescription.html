@@ -230,8 +230,17 @@
       <section class="property_description__">
         <div class="container">
           <div class="row property_information"></div>
+          <div class="row bg-white p-5 mb-5">
+            <div class="col-12">
+              <div class="location__ d-flex flex-column">
+                <h4 class="mb-4 fw-bold">Location</h4>
+                <div id="map"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
       <!--have a question-->
       <!--recent sales start-->
       <section class="gallery">
@@ -422,12 +431,11 @@
     <script src="./js/firebase.js"></script>
     <script src="./js/home.js"></script>
     <script src="./js/propertydescription.js"></script>
-    <script src="./main.js"></script>
-
     <script
       async
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJejVA1E5kP-2TshlCJuk5d-oBR6g2D4o&callback=initMap&v=weekly"
       defer
     ></script>
+    <script src="./main.js"></script>
   </body>
 </html>

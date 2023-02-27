@@ -1,4 +1,4 @@
-const blogSection = document.querySelector(".recently_listed");
+const recentListed = document.querySelector(".col__1");
 
 db.collection("blogs")
   .get()
@@ -12,7 +12,7 @@ db.collection("blogs")
 
 const createBlog = (blog) => {
   let data = blog.data();
-  blogSection.innerHTML += `
+  recentListed.innerHTML += `
   <a href="/${blog.id}" class="gallery__link">
   <figure class="gallery__thumb">
     <img
