@@ -91,7 +91,7 @@ const addDescription = (element, data) => {
             <span class="property__address">${data.property_address}</span>
           </div>
           <div class="price mb-4">
-            <span>$</span><span id="property_price">${data.property_price}</span>
+            <span>$</span>&nbps;<span id="property_price">${data.property_price}</span>
           </div>
           <div class="basic_information d-flex flex-row gap-2">
             <div>
