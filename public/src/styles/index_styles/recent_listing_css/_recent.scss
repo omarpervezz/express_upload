@@ -92,6 +92,8 @@ $width: 100%;
     display: block;
     width: 100%;
     transition: 0.5s;
+    height: 31rem;
+    object-fit: cover;
 
     &:hover {
       transform: scale(1.2);

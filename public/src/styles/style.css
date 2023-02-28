@@ -891,6 +891,9 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
   display: block;
   width: 100%;
   transition: 0.5s;
+  height: 31rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .gallery__image:hover {
   transform: scale(1.2);
