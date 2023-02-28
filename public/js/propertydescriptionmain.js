@@ -11,7 +11,6 @@ docRef.get().then((doc) => {
 });
 
 const setupListings = (data) => {
-  console.log(data);
   const banner = document.querySelector(".s__banner");
   banner.style.backgroundImage = `url(${data.bannerImage})`;
   const content = document.querySelector(".content");

@@ -81,7 +81,7 @@ const uploadImage = (uploadFile, uploadType) => {
   // const [file] = uploadFile.files;
 
   for (let x = 0; x < uploadFile.files.length; x++) {
-    if (uploadFile.files) {
+    if (uploadFile.files && uploadFile.files[x].type.includes("image")) {
       const formdata = new FormData();
       formdata.append("image", uploadFile.files[x]);
 
@@ -92,7 +92,7 @@ const uploadImage = (uploadFile, uploadType) => {
         .then((res) => res.json())
         .then((data) => {
           if (uploadType == "image") {
-            addImage(data, uploadFile.files.name);
+            addImage(data, uploadFile.files[x].name);
           } else {
             bannerPath = `${location.origin}/${data}`;
             banner.style.backgroundImage = `url("${bannerPath}")`;
