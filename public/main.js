@@ -350,24 +350,41 @@ ScrollOut({
 
 const menuItem = document.querySelectorAll(".nav_menu ul li a");
 
+// Get the reference to the UI elements
+const userInformation = document.querySelector(".user_information_");
+const userName = document.querySelector(".user_name");
 
+// Listen for authentication state changes
+firebase.auth().onAuthStateChanged(function (user) {
+  if (user) {
+    console.log(user);
+    // User is signed in, get the user data
+    const userData = user.displayName || user.email || "User";
 
+    // Update the UI
+    userName.textContent = userData;
+    userInformation.style.display = "block";
+  } else {
+    // No user is signed in, hide the user information UI
+    userInformation.style.display = "none";
+  }
+});
+// get the logout button element
+const logoutBtn = document.getElementById("logoutBtn");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// add a click event listener to the logout button
+logoutBtn.addEventListener("click", () => {
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      // Sign-out successful.
+      console.log("User signed out successfully!");
+      // you can redirect the user to the login page or update UI accordingly
+      window.location.href = "login.html";
+    })
+    .catch((error) => {
+      // An error happened.
+      console.log(error);
+    });
+});

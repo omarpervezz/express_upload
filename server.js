@@ -16,30 +16,15 @@ app.get("/addlisting", (req, res) => {
   res.sendFile(path.join(initial_path, "addlisting.html"));
 });
 
-// upload link
-app.post("/upload", (req, res) => {
-  let file = req.files.image;
-  let date = new Date();
-  // image name
-  let imagename = date.getDate() + date.getTime() + file.name;
-  // image upload path
-  let path = "public/uploads/" + imagename;
-
-  // create upload
-  file.mv(path, (err, result) => {
-    if (err) {
-      throw err;
-    } else {
-      // our image upload path
-      res.json(`uploads/${imagename}`);
-    }
-  });
-});
-
 app.get("/:propertydescription", (req, res) => {
   res.sendFile(path.join(initial_path, "propertydescription.html"));
 });
-
+app.get("/signup", (req, res) => {
+  res.sendFile(path.join(initial_path, "signup.html"));
+});
+app.get("/login", (req, res) => {
+  res.sendFile(path.join(initial_path, "login.html"));
+});
 app.use((req, res) => {
   res.json("404");
 });

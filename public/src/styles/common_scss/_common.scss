@@ -1,6 +1,36 @@
+body {
+  background: $primary_one;
+}
 $height__: 100vh;
 section {
   padding: 5rem 0;
+}
+.user_information_ {
+  display: none;
+  .user_name,
+  i {
+    color: $primary_one;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .fa-arrow-right-from-bracket {
+    position: relative;
+    &:hover:after {
+      content: attr(data-logout);
+      width: 7rem;
+      height: 2rem;
+      font-size: 0.6rem;
+      text-transform: lowercase;
+      background: black;
+      position: absolute;
+      bottom: -3rem;
+      right: 0rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: normal;
+    }
+  }
 }
 .s__banner {
   background: url(../assets/img/realty_cover.jpg);

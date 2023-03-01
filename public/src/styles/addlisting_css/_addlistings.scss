@@ -62,14 +62,14 @@
 
 .preview-container-item {
   position: relative;
-  width: 302px;
+  width: 130px;
   .preview-close-button {
     position: absolute;
     right: 1rem;
-    font-size: 1.7rem;
-    color: $primary_one;
+    font-size: 1.4rem;
+    color: #0d0e0e;
     cursor: pointer;
-    top: 1rem;
+    top: 0.3rem;
   }
 }
 

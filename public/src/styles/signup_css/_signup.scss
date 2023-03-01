@@ -1,0 +1,10 @@
+.signup_container {
+  .login__ {
+    color: $primary_one;
+    font-size: 1.6rem;
+    text-decoration: underline;
+    &:hover {
+      color: #19469d;
+    }
+  }
+}

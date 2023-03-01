@@ -1080,7 +1080,7 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
   padding: 10rem 0;
   text-align: center;
   min-height: 30vh;
-  background-color: #eceff1;
+  background-color: #f3f7fd;
 }
 .work_sec h2 {
   margin: 0 0 1.5rem 0;
@@ -1501,8 +1501,40 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
     height: 66px;
   }
 }
+body {
+  background: #f3f7fd;
+}
+
 section {
   padding: 5rem 0;
+}
+
+.user_information_ {
+  display: none;
+}
+.user_information_ .user_name,
+.user_information_ i {
+  color: #f3f7fd;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.user_information_ .fa-arrow-right-from-bracket {
+  position: relative;
+}
+.user_information_ .fa-arrow-right-from-bracket:hover:after {
+  content: attr(data-logout);
+  width: 7rem;
+  height: 2rem;
+  font-size: 0.6rem;
+  text-transform: lowercase;
+  background: black;
+  position: absolute;
+  bottom: -3rem;
+  right: 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: normal;
 }
 
 .s__banner {
@@ -2416,15 +2448,15 @@ h2 {
 
 .preview-container-item {
   position: relative;
-  width: 302px;
+  width: 130px;
 }
 .preview-container-item .preview-close-button {
   position: absolute;
   right: 1rem;
-  font-size: 1.7rem;
-  color: #f3f7fd;
+  font-size: 1.4rem;
+  color: #0d0e0e;
   cursor: pointer;
-  top: 1rem;
+  top: 0.3rem;
 }
 
 .preview-image {
@@ -2690,7 +2722,9 @@ fieldset {
 #name,
 #phone,
 #email,
-#message {
+#message,
+#password,
+#confirm_password {
   background-color: transparent;
   color: #f3f7fd;
   border: none;
@@ -2708,7 +2742,9 @@ fieldset {
 #name:focus,
 #phone:focus,
 #email:focus,
-#message:focus {
+#message:focus,
+#password:focus,
+#confirm_password:focus {
   outline: none;
   border-bottom: 0.1px solid #f3f7fd;
 }
@@ -2776,7 +2812,9 @@ input[type=submit] {
   #name,
   #phone,
   #email,
-  #message {
+  #message,
+  #password,
+  #confirm_password {
     padding: 11px 0;
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
@@ -2819,4 +2857,12 @@ input[type=submit] {
   .row .second_element .footer_logo {
     margin-top: 1rem;
   }
+}
+.signup_container .login__ {
+  color: #f3f7fd;
+  font-size: 1.6rem;
+  text-decoration: underline;
+}
+.signup_container .login__:hover {
+  color: #19469d;
 }/*# sourceMappingURL=style.css.map */

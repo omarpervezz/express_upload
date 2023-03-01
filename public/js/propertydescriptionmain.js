@@ -1,7 +1,5 @@
 let blogId = decodeURI(location.pathname.split("/").pop());
-
 let docRef = db.collection("blogs").doc(blogId);
-
 docRef.get().then((doc) => {
   if (doc.exists) {
     setupListings(doc.data());
@@ -11,7 +9,6 @@ docRef.get().then((doc) => {
 });
 
 const setupListings = (data) => {
-  console.log(data);
   const banner = document.querySelector(".s__banner");
   banner.style.backgroundImage = `url(${data.setBannerCover})`;
   // banner.style.backgroundImage = `url(${data.bannerImage})`;
@@ -19,16 +16,18 @@ const setupListings = (data) => {
   const propertyInformation = document.querySelector(
     ".property_description__ .property_information"
   );
-  addDescription(propertyInformation, data);
-  // const listing_gallery = document.querySelector(".listing_gallery");
+
   addImg(content, data);
+  addDescription(propertyInformation, data);
+  const listing_gallery = document.querySelector(".listing_gallery");
+  galleryListing(listing_gallery, data);
 };
 
-const addImg = (ele, data) => {
+const addImg = (element, data) => {
   console.log(data.uploadedImageUrls_);
 
   data.uploadedImageUrls_.forEach((img) => {
-    ele.innerHTML += `
+    element.innerHTML += `
   <a
 class="elem"
 href="${img}"
@@ -525,7 +524,18 @@ const addDescription = (element, data) => {
     
     `;
 };
-
+const galleryListing = (element, data) => {
+  console.log(data);
+  data.uploadedImageUrls_.forEach((img) => {
+    element.innerHTML += `   
+    <div class="col-12 col-md-3">
+    <img
+      src="${img}"
+    
+    />
+  </div>`;
+  });
+};
 // Initialize and add the map
 function initMap() {
   // The location of Uluru

@@ -107,18 +107,27 @@
                     </div>
                   </li>
                   <li>
-                    <a href="addlisting.html" class="nav_item">Add Listings</a>
+                    <a href="signup.html" class="nav_item">Add Listings</a>
                   </li>
                   <li><a href="#" class="nav_item">Career</a></li>
                 </ul>
               </div>
             </div>
-            <div>
-              <div class="hamburger" data-pushbar-target="mypushbar1">
+            <div class="d-flex align-items-center">
+              <div class="hamburger me-4" data-pushbar-target="mypushbar1">
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
                 <span>Menu</span>
+              </div>
+              <div class="user_information_">
+                <i class="fa-solid fa-user mt-2"></i>
+                &nbsp;<span class="user_name"></span> &nbsp;
+                <i
+                  id="logoutBtn"
+                  data-logout="log out"
+                  class="fa-solid fa-arrow-right-from-bracket"
+                ></i>
               </div>
             </div>
           </div>
@@ -1743,6 +1752,7 @@
     <script src="./src/vendor_js/jquery-bg-slideshow-min.js"></script>
     <script src="./src/js/pushbar.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-storage.js"></script>
     <script src="./js/firebase.js"></script>

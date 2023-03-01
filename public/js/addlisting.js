@@ -253,84 +253,92 @@ let months = [
 
 form__.addEventListener("submit", (e) => {
   e.preventDefault();
-  if (true) {
-    // generating id
-    let letters = "abcdefghijklmnopqrstuvwxyz";
-    let propertyNameChecking = propertyName.value.split(" ").join("-");
-    let id = "";
-    for (let i = 0; i < 4; i++) {
-      id += letters[Math.floor(Math.random() * letters.length)];
+  // generating id
+  let letters = "abcdefghijklmnopqrstuvwxyz";
+  let propertyNameChecking = propertyName.value.split(" ").join("-");
+  function generateRandomId(length) {
+    let characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let result = "";
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(
+        Math.floor(Math.random() * characters.length)
+      );
     }
-
-    // setting up docName
-    let docName = `${propertyNameChecking}-${id}`;
-    let date = new Date(); // for published at info
-
-    //access firstore with db variable;
-    db.collection("blogs")
-      .doc(docName)
-      .set({
-        setBannerCover: setBannerImg,
-        uploadedImageUrls_: uploadedImageUrls,
-        publishedAt: `${date.getDate()} ${
-          months[date.getMonth()]
-        } ${date.getFullYear()}`,
-        propertyName: propertyName.value,
-        property_price: property_price.value,
-        property_address: property_address.value,
-        beds: beds.value,
-        baths: baths.value,
-        lot_size: lot_size.value,
-        property__description: property__description.value,
-        senior_community: senior_community.value,
-        spa_features: spa_features.value,
-        special_listings_conditions: special_listings_conditions.value,
-        property_status: property_status.value,
-        view__: view__.value,
-        zoning__: zoning__.value,
-        air_conditining_: air_conditining_.value,
-        common_walls: common_walls.value,
-        fireplace_features: fireplace_features.value,
-        firepalce_y_n: firepalce_y_n.value,
-        furnished__: furnished__.value,
-        heating_y_N: heating_y_N.value,
-        laundry_features: laundry_features.value,
-        living_area_: living_area_.value,
-        fenching_: fenching_.value,
-        foundation_details_: foundation_details_.value,
-        lot_dimensions_: lot_dimensions_.value,
-        lot_size_area: lot_size_area.value,
-        lot_size_units_: lot_size_units_.value,
-        parking_features_: parking_features_.value,
-        total_parking: total_parking.value,
-        id__: id__.value,
-        area__: area__.value,
-        country__: country__.value,
-        zip__: zip__.value,
-        style__: style__.value,
-        accessbility__: accessbility__.value,
-        appliances__: appliances__.value,
-        architectural__: architectural__.value,
-        cooling__: cooling__.value,
-        heating__: heating__.value,
-        interior__features: interior__features.value,
-        levels__: levels__.value,
-        listing_agent: listing_agent.value,
-        listing_agent_state_license: listing_agent_state_license.value,
-        mls_area__: mls_area__.value,
-        occupancy_description: occupancy_description.value,
-        pool_feature: pool_feature.value,
-        property_condition_: property_condition_.value,
-        property_type: property_type.value,
-        roof: roof.value,
-        property_subtype_additional: property_subtype_additional.value,
-        property_subtype_: property_subtype_.value,
-      })
-      .then(() => {
-        location.href = `/${docName}`;
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+    return result;
   }
+
+  // generate a random ID with 8 characters
+  let id = generateRandomId(8);
+
+  // setting up docName
+  let docName = `${propertyNameChecking}-${id}`;
+  let date = new Date(); // for published at info
+
+  //access firstore with db variable;
+  db.collection("blogs")
+    .doc(docName)
+    .set({
+      setBannerCover: setBannerImg,
+      uploadedImageUrls_: uploadedImageUrls,
+      publishedAt: `${date.getDate()} ${
+        months[date.getMonth()]
+      } ${date.getFullYear()}`,
+      propertyName: propertyName.value,
+      property_price: property_price.value,
+      property_address: property_address.value,
+      beds: beds.value,
+      baths: baths.value,
+      lot_size: lot_size.value,
+      property__description: property__description.value,
+      senior_community: senior_community.value,
+      spa_features: spa_features.value,
+      special_listings_conditions: special_listings_conditions.value,
+      property_status: property_status.value,
+      view__: view__.value,
+      zoning__: zoning__.value,
+      air_conditining_: air_conditining_.value,
+      common_walls: common_walls.value,
+      fireplace_features: fireplace_features.value,
+      firepalce_y_n: firepalce_y_n.value,
+      furnished__: furnished__.value,
+      heating_y_N: heating_y_N.value,
+      laundry_features: laundry_features.value,
+      living_area_: living_area_.value,
+      fenching_: fenching_.value,
+      foundation_details_: foundation_details_.value,
+      lot_dimensions_: lot_dimensions_.value,
+      lot_size_area: lot_size_area.value,
+      lot_size_units_: lot_size_units_.value,
+      parking_features_: parking_features_.value,
+      total_parking: total_parking.value,
+      id__: id__.value,
+      area__: area__.value,
+      country__: country__.value,
+      zip__: zip__.value,
+      style__: style__.value,
+      accessbility__: accessbility__.value,
+      appliances__: appliances__.value,
+      architectural__: architectural__.value,
+      cooling__: cooling__.value,
+      heating__: heating__.value,
+      interior__features: interior__features.value,
+      levels__: levels__.value,
+      listing_agent: listing_agent.value,
+      listing_agent_state_license: listing_agent_state_license.value,
+      mls_area__: mls_area__.value,
+      occupancy_description: occupancy_description.value,
+      pool_feature: pool_feature.value,
+      property_condition_: property_condition_.value,
+      property_type: property_type.value,
+      roof: roof.value,
+      property_subtype_additional: property_subtype_additional.value,
+      property_subtype_: property_subtype_.value,
+    })
+    .then(() => {
+      location.href = `/${docName}`;
+    })
+    .catch((err) => {
+      console.error(err);
+    });
 });
