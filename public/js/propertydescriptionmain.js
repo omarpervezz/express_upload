@@ -11,65 +11,38 @@ docRef.get().then((doc) => {
 });
 
 const setupListings = (data) => {
+  console.log(data);
   const banner = document.querySelector(".s__banner");
-  banner.style.backgroundImage = `url(${data.bannerImage})`;
+  banner.style.backgroundImage = `url(${data.setBannerCover})`;
+  // banner.style.backgroundImage = `url(${data.bannerImage})`;
   const content = document.querySelector(".content");
   const propertyInformation = document.querySelector(
     ".property_description__ .property_information"
   );
   addDescription(propertyInformation, data);
-  const listing_gallery = document.querySelector(".listing_gallery");
-  addImg(content, data, data.article, listing_gallery);
+  // const listing_gallery = document.querySelector(".listing_gallery");
+  addImg(content, data);
 };
 
-const addImg = (ele, data, article, l_gallery) => {
-  article = article.split("\n").filter((item) => item.length);
+const addImg = (ele, data) => {
+  console.log(data.uploadedImageUrls_);
 
-  article.forEach((item) => {
-    //checking for image format
-    if (item[0] == "!" && item[1] == "[") {
-      let seperator;
-
-      for (let i = 0; i <= item.length; i++) {
-        if (
-          item[i] == "]" &&
-          item[i + 1] == "(" &&
-          item[item.length - 1] == ")"
-        ) {
-          seperator = i;
-        }
-      }
-
-      let alt = item.slice(2, seperator);
-      let src = item.slice(seperator + 2, item.length - 1);
-      ele.innerHTML += `
-            <a
-        class="elem"
-        href="${src}"
-        data-lcl-txt="${data.property_address}"
-        data-lcl-author="${data.listing_agent}"
-        data-lcl-thumb="${src}"
-        >
-        <span
-        style="
-            background-image: url(${src});
-        "
-        ></span>
-        </a>
-            `;
-      l_gallery.innerHTML += `
-            
-      <div class="col-12 col-md-3">
-      <img
-        src="${src}"
-        alt="${alt}"
-      />
-    </div>
-            
-            `;
-    } else {
-      ele.innerHTML += `<p>${item}</p>`;
-    }
+  data.uploadedImageUrls_.forEach((img) => {
+    ele.innerHTML += `
+  <a
+class="elem"
+href="${img}"
+data-lcl-txt="${data.property_address}"
+data-lcl-author="${data.listing_agent}"
+data-lcl-thumb="${img}"
+>
+<span
+style="
+  background-image: url(${img});
+"
+></span>
+</a>
+  `;
   });
 };
 

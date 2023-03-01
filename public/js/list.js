@@ -16,7 +16,7 @@ const createBlog = (blog) => {
   <a href="/${blog.id}" class="gallery__link">
   <figure class="gallery__thumb">
     <img
-      src="${data.bannerImage}"
+      src="${data.setBannerCover}"
       alt="gallery_img"
       class="gallery__image"
     />

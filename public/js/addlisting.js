@@ -58,60 +58,183 @@ const property_subtype_additional = document.querySelector(
   "#property_subtype_additional"
 );
 const property_subtype_ = document.querySelector("#property_subtype_");
-
 const form__ = document.querySelector("#form__");
+const publishBtn = document.querySelector(".publish-btn");
 
-// banner
 const bannerImage = document.querySelector("#banner-upload");
 const banner = document.querySelector(".banner");
-let bannerPath;
+const close_cover = document.querySelector(".close_cover");
+const uploadInput = document.querySelector("#file-input");
+const previewContainer = document.querySelector("#preview-container");
 
-const publishBtn = document.querySelector(".publish-btn");
-const uploadInput = document.querySelector("#image-upload");
-
-bannerImage.addEventListener("change", () => {
-  uploadImage(bannerImage, "banner");
+// banner upload
+bannerImage.addEventListener("change", (e) => {
+  uploadBanner();
+});
+// banner close
+close_cover.addEventListener("click", () => {
+  closePreview();
+});
+// close preview function
+function closePreview() {
+  banner.style.display = "none";
+  bannerImage.value = "";
+}
+// upload banner
+function uploadBanner() {
+  if (bannerImage.files && bannerImage.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      banner.style.backgroundImage = "url(" + e.target.result + ")";
+      banner.style.display = "block";
+    };
+    reader.readAsDataURL(bannerImage.files[0]);
+  }
+}
+// upload input files
+uploadInput.addEventListener("change", (e) => {
+  uploadImage(e, "image");
 });
 
-uploadInput.addEventListener("change", () => {
-  uploadImage(uploadInput, "image");
-});
+// function to remove a preview upload input files
+const removePreviewImage = (event) => {
+  uploadInput.value = "";
+  event.target.parentNode.remove();
+};
+// upoad input function files
+const uploadImage = (e, filetype) => {
+  // get the files
+  const files = e.target.files;
 
-const uploadImage = (uploadFile, uploadType) => {
-  // const [file] = uploadFile.files;
+  // loop through the files and create a preview image for each
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
 
-  for (let x = 0; x < uploadFile.files.length; x++) {
-    if (uploadFile.files && uploadFile.files[x].type.includes("image")) {
-      const formdata = new FormData();
-      formdata.append("image", uploadFile.files[x]);
+    // create an image element for the preview
+    const img = document.createElement("img");
+    img.classList.add("preview-image");
 
-      fetch("/upload", {
-        method: "post",
-        body: formdata,
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (uploadType == "image") {
-            addImage(data, uploadFile.files[x].name);
-          } else {
-            bannerPath = `${location.origin}/${data}`;
-            banner.style.backgroundImage = `url("${bannerPath}")`;
-          }
-        });
-    } else {
-      alert("upload Image only");
-    }
+    // create a close button for the preview
+    const closeButton = document.createElement("i");
+    closeButton.classList.add("fa-solid", "fa-xmark", "preview-close-button");
+
+    // add an event listener to the close button to remove the corresponding preview image
+    closeButton.addEventListener("click", removePreviewImage);
+
+    // add the preview image and close button to the page
+    const previewContainerItem = document.createElement("div");
+    previewContainerItem.classList.add("preview-container-item");
+    previewContainerItem.appendChild(img);
+    previewContainerItem.appendChild(closeButton);
+    previewContainer.appendChild(previewContainerItem);
+
+    // set the preview image source
+    const reader = new FileReader();
+    reader.onload = () => {
+      img.src = reader.result;
+    };
+    reader.readAsDataURL(file);
   }
 };
+let setBannerImg;
+bannerImage.addEventListener("change", function (e) {
+  // Get the file
+  var file = e.target.files[0];
+  // Create a reference to the location in Firebase Storage where the file should be uploaded
+  var storageRef = storage.ref().child("images/" + file.name);
 
-const addImage = (imagepath, alt) => {
-  let curPos = img_upload_field.selectionStart;
-  let textToInsert = `\r![${alt}](${imagepath})\r`;
-  img_upload_field.value =
-    img_upload_field.value.slice(0, curPos) +
-    textToInsert +
-    img_upload_field.value.slice(curPos);
-};
+  // Upload the file to Firebase Storage
+  var uploadTask = storageRef.put(file);
+
+  // Track upload progress
+  uploadTask.on(
+    "state_changed",
+    function (snapshot) {
+      // Get the percentage of bytes uploaded
+      var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      console.log("Upload is " + progress + "% done");
+      const progress_cover_container = document.querySelector(
+        ".progress_cover_contianer"
+      );
+      const progressDiv = document.getElementById("progress_cover");
+      progress_cover_container.style.display = "block";
+      progressDiv.style.width = `${Math.round(progress)}%`;
+
+      progressDiv.innerText =
+        "Uploading cover img " + Math.round(progress) + "% done";
+
+      if (progress >= 100) {
+        setTimeout(() => {
+          progress_cover_container.style.display = "none";
+        }, 3000);
+      }
+    },
+    function (error) {
+      console.error("Error uploading file:", error);
+    },
+    function () {
+      // Get the download URL of the uploaded file
+      storageRef
+        .getDownloadURL()
+        .then(function (url) {
+          setBannerImg = url;
+          console.log(setBannerImg);
+        })
+        .catch(function (error) {
+          console.error("Error getting download URL:", error);
+        });
+    }
+  );
+});
+let uploadedImageUrls = [];
+uploadInput.addEventListener("change", (e) => {
+  // Loop through the selected files
+  for (let i = 0; i < e.target.files.length; i++) {
+    const file = e.target.files[i];
+    // Upload the file to Firebase Storage
+    const storageRef = storage.ref().child("images/" + file.name);
+    const uploadTask = storageRef.put(file);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        // Get upload progress as a percentage
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log("Upload is " + progress + "% done");
+        const progress_img_contianer = document.querySelector(
+          ".progress_img_contianer"
+        );
+        const progressDiv = document.getElementById("progress_property");
+        progress_img_contianer.style.display = "block";
+        progressDiv.style.width = `${Math.round(progress)}%`;
+
+        progressDiv.innerText =
+          "Uploading property img " + Math.round(progress) + "% done";
+
+        if (progress >= 100) {
+          setTimeout(() => {
+            progress_img_contianer.style.display = "none";
+          }, 3000);
+        }
+      },
+      (error) => {
+        console.error("Error uploading file:", error);
+      },
+      () => {
+        // Get the download URL of the uploaded file
+        storageRef
+          .getDownloadURL()
+          .then((url) => {
+            // Add the image URL to the array
+            uploadedImageUrls.push(url);
+          })
+          .catch((error) => {
+            console.error("Error getting download URL:", error);
+          });
+      }
+    );
+  }
+});
 
 let months = [
   "Jan",
@@ -130,7 +253,7 @@ let months = [
 
 form__.addEventListener("submit", (e) => {
   e.preventDefault();
-  if (img_upload_field.value.length && propertyName.value.length) {
+  if (true) {
     // generating id
     let letters = "abcdefghijklmnopqrstuvwxyz";
     let propertyNameChecking = propertyName.value.split(" ").join("-");
@@ -147,8 +270,8 @@ form__.addEventListener("submit", (e) => {
     db.collection("blogs")
       .doc(docName)
       .set({
-        article: img_upload_field.value,
-        bannerImage: bannerPath,
+        setBannerCover: setBannerImg,
+        uploadedImageUrls_: uploadedImageUrls,
         publishedAt: `${date.getDate()} ${
           months[date.getMonth()]
         } ${date.getFullYear()}`,

@@ -211,21 +211,43 @@
       </section>
       <!--seller banner end-->
       <!--banner upload-->
-
       <section class="banner_upload">
         <div class="banner">
+          <i class="fa-solid fa-xmark close_cover"></i>
+        </div>
+        <div class="upload_icon">
           <input type="file" accept="image/*" id="banner-upload" hidden />
           <label for="banner-upload" class="banner-upload-btn"
             ><img src="./src/assets/img/upload.png" alt="upload banner"
           /></label>
         </div>
       </section>
+      <div class="container-fluid py-5">
+        <div class="row">
+          <div class="col-12">
+            <div class="progress_cover_contianer">
+              <div class="progress_" id="progress_cover"></div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="container-fluid">
-        <textarea type="text" class="img_upload_field" readonly></textarea>
-        <input type="file" accept="image/*" id="image-upload" hidden multiple />
-        <label for="image-upload" class="btn_ upload-btn"
+        <input type="file" accept="image/*" id="file-input" hidden multiple />
+        <label for="file-input" class="btn_ upload-btn"
           >Upload property image</label
         >
+      </div>
+      <div class="container-fluid">
+        <div id="preview-container"></div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="progress_img_contianer">
+              <div class="progress_" id="progress_property"></div>
+            </div>
+          </div>
+        </div>
       </div>
       <!--banner upload-->
       <!--take input from user-->
@@ -1119,10 +1141,9 @@
     <script src="./src/js/pushbar.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-storage.js"></script>
     <script src="./js/firebase.js"></script>
     <script src="./js/addlisting.js"></script>
     <script defer src="./main.js"></script>
-
-    <script></script>
   </body>
 </html>

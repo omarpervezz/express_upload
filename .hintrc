@@ -8,6 +8,8 @@
       {
         "label": "off"
       }
-    ]
+    ],
+    "axe/text-alternatives": "off",
+    "axe/parsing": "off"
   }
 }

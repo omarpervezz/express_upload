@@ -1,13 +1,12 @@
 {
-  "name": "the-right-realty-group",
+  "name": "bloggin-site",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js"
   },
-  "author": "Omar Pervez",
-  "github": "https://github.com/omarpervezz",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "express-fileupload": "^1.2.1",

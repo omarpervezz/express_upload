@@ -1,15 +1,15 @@
 {
-  "editor.autoClosingBrackets": "never",
-  "editor.suggestOnTriggerCharacters": false,
-  "editor.quickSuggestions": {
-    "comments": "off",
-    "strings": "off",
-    "other": "off"
-  },
-  "editor.hover.enabled": false,
-  "editor.parameterHints.enabled": false,
-  "editor.suggest.snippetsPreventQuickSuggestions": false,
-  "html.suggest.html5": false,
+  // "editor.autoClosingBrackets": "never",
+  // "editor.suggestOnTriggerCharacters": false,
+  // "editor.quickSuggestions": {
+  //   "comments": "off",
+  //   "strings": "off",
+  //   "other": "off"
+  // },
+  // "editor.hover.enabled": false,
+  // "editor.parameterHints.enabled": false,
+  // "editor.suggest.snippetsPreventQuickSuggestions": false,
+  // "html.suggest.html5": false,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
