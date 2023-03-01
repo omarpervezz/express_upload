@@ -342,3 +342,10 @@ form__.addEventListener("submit", (e) => {
       console.error(err);
     });
 });
+firebase.auth().onAuthStateChanged(function (user) {
+  if (user) {
+    console.log(user);
+  } else {
+    window.location.replace("login.html");
+  }
+});

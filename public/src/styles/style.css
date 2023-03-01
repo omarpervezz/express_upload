@@ -1511,6 +1511,7 @@ section {
 
 .user_information_ {
   display: none;
+  margin-left: 1.4rem;
 }
 .user_information_ .user_name,
 .user_information_ i {

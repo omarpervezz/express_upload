@@ -357,7 +357,6 @@ const userName = document.querySelector(".user_name");
 // Listen for authentication state changes
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
-    console.log(user);
     // User is signed in, get the user data
     const userData = user.displayName || user.email || "User";
 
