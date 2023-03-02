@@ -4,11 +4,16 @@ db.collection("blogs")
   .limit(3)
   .get()
   .then((blogs) => {
+    // hide the loader
     blogs.forEach((blog) => {
       if (blog.id != decodeURI(location.pathname.split("/").pop())) {
         createBlog(blog);
       }
     });
+  })
+  .catch((error) => {
+    // Hide the loader
+    loader.style.display = "none";
   });
 
 const createBlog = (blog) => {

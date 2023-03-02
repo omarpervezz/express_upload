@@ -1,20 +1,23 @@
 let blogId = decodeURI(location.pathname.split("/").pop());
-const loader = document.querySelector(".loader");
+const loader = document.querySelectorAll(".loader");
+console.log(loader.length);
 let docRef = db.collection("blogs").doc(blogId);
-docRef
-  .get()
-  .then((doc) => {
-    if (doc.exists) {
-      loader.style.display = "none";
-      setupListings(doc.data());
-    } else {
-      location.replace("/");
-    }
-  })
-  .catch((error) => {
-    // Hide the loader
-    loader.style.display = "none";
-  });
+for (let x = 0; x < loader.length; x++) {
+  docRef
+    .get()
+    .then((doc) => {
+      if (doc.exists) {
+        loader[x].style.display = "none";
+        setupListings(doc.data());
+      } else {
+        location.replace("/");
+      }
+    })
+    .catch((error) => {
+      // Hide the loader
+      loader[x].style.display = "none";
+    });
+}
 
 const setupListings = (data) => {
   const banner = document.querySelector(".s__banner");
@@ -32,8 +35,6 @@ const setupListings = (data) => {
 };
 
 const addImg = (element, data) => {
-  console.log(data.uploadedImageUrls_);
-
   data.uploadedImageUrls_.forEach((img) => {
     element.innerHTML += `
   <a
@@ -533,7 +534,6 @@ const addDescription = (element, data) => {
     `;
 };
 const galleryListing = (element, data) => {
-  console.log(data);
   data.uploadedImageUrls_.forEach((img) => {
     element.innerHTML += `   
     <div class="col-12 col-md-3">
