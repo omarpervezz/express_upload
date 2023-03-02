@@ -422,9 +422,6 @@ logoutBtn.addEventListener("click", () => {
 const page_loader = document.querySelector(".container_loader");
 const body = document.querySelector("body");
 
-// Hide the loader initially
-page_loader.style.display = "none";
-
 // Add an event listener for the window's "load" event
 window.onload = function () {
   // Show the container and hide the loader
