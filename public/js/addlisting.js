@@ -343,9 +343,7 @@ form__.addEventListener("submit", (e) => {
     });
 });
 firebase.auth().onAuthStateChanged(function (user) {
-  if (user) {
-    console.log(user);
-  } else {
+  if (!user) {
     window.location.replace("login.html");
   }
 });

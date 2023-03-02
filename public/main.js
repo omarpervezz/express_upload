@@ -417,3 +417,17 @@ logoutBtn.addEventListener("click", () => {
       console.log(error);
     });
 });
+
+// Get a reference to the loader and container elements
+const page_loader = document.querySelector(".container_loader");
+const body = document.querySelector("body");
+
+// Hide the loader initially
+page_loader.style.display = "none";
+
+// Add an event listener for the window's "load" event
+window.onload = function () {
+  // Show the container and hide the loader
+  container.style.display = "block";
+  page_loader.style.display = "none";
+};
