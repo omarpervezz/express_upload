@@ -428,6 +428,6 @@ page_loader.style.display = "none";
 // Add an event listener for the window's "load" event
 window.onload = function () {
   // Show the container and hide the loader
-  container.style.display = "block";
+  body.style.display = "block";
   page_loader.style.display = "none";
 };
