@@ -70,25 +70,16 @@
     left: auto;
     right: 0;
   }
-
+  .owl-theme .owl-controls .owl-buttons div {
+    margin: 1rem 2rem;
+    padding: 7px 48px;
+    background-color: #1b1b1b;
+    border-radius: 0;
+    opacity: 1;
+  }
   .owl-theme .owl-controls {
     margin-top: 1rem;
     margin-left: 3rem;
-  }
-  .owl-theme .owl-controls .owl-buttons div {
-    opacity: 0.8;
-    background-color: #1b1b1b;
-  }
-  .owl-prev:before,
-  .owl-next:before {
-    content: "\f053";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: 1.6rem;
-    color: $white;
-  }
-  .owl-next:before {
-    content: "\f054";
   }
 }
 @media only screen and (max-width: 1200px) {
@@ -101,6 +92,13 @@
   }
   .testimonial__sec .description {
     font-size: 1.1rem !important;
+  }
+  .owl-theme .owl-controls .owl-buttons div {
+    padding: 3px 36px !important;
+  }
+  .testimonial__sec .owl-prev:before,
+  .testimonial__sec .owl-next:before {
+    font-size: 1.3rem;
   }
 }
 @media only screen and (max-width: 766px) {

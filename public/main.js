@@ -101,6 +101,16 @@ $(document).ready(function () {
       navigationText: ["", ""],
       autoPlay: false,
     });
+    const owl_buttons_container = document.querySelector(".owl-buttons");
+    owl_buttons_container.classList.add("d-flex", "justify-content-center");
+    const prev = document.querySelectorAll(
+      "#testimonial-slider .owl-buttons .owl-prev"
+    );
+
+    const next = document.querySelectorAll(
+      "#testimonial-slider .owl-buttons .owl-next"
+    );
+    testimonialController(prev, next);
   });
   // back to top
   $(function () {
@@ -319,21 +329,6 @@ $(document).ready(function () {
   });
 });
 
-// Get the current page URL
-const currentPageUrl = window.location.href;
-
-// Get all the pagination links
-const pageLinks = document.querySelectorAll(".page");
-
-// Loop through each link and set the active class and disable the appropriate link
-pageLinks.forEach((link) => {
-  if (link.href === currentPageUrl) {
-    link.classList.add("active");
-  } else {
-    link.classList.remove("active");
-  }
-});
-
 ScrollOut({
   onShown(el) {
     if (el.classList.contains("c__1")) {
@@ -348,8 +343,44 @@ ScrollOut({
   },
 });
 
-const menuItem = document.querySelectorAll(".nav_menu ul li a");
+// testimonial controller
+function testimonialController(prev, next) {
+  for (let i = 0; i < prev.length; i++) {
+    const prevStyle = window.getComputedStyle(prev[i], "::before");
+    const prevContent = prevStyle.content;
+    prev[i].style.setProperty("--prev-before-content", prevContent);
+    prev[i].classList.add("btn_", "btn-prev", "d-flex");
+    prev[i].textContent = "Prev";
+  }
 
+  for (let i = 0; i < next.length; i++) {
+    const nextStyle = window.getComputedStyle(next[i], "::before");
+    const nextContent = nextStyle.content;
+    next[i].style.setProperty("--next-before-content", nextContent);
+    next[i].classList.add("btn_", "btn-next", "d-flex");
+    next[i].textContent = "Next";
+  }
+
+  const customStyles = document.createElement("style");
+  customStyles.innerHTML = `
+  #testimonial-slider .owl-buttons .btn_::before {
+    content: none !important;
+  }
+  
+  #testimonial-slider .owl-buttons .btn-prev::before {
+    content: "Prev";
+   
+  }
+  
+  #testimonial-slider .owl-buttons .btn-next::before {
+    content: "Next";
+    
+  }
+`;
+  document.head.appendChild(customStyles);
+}
+
+//firebase user authentication
 // Get the reference to the UI elements
 const userInformation = document.querySelector(".user_information_");
 const userName = document.querySelector(".user_name");
@@ -370,7 +401,6 @@ firebase.auth().onAuthStateChanged(function (user) {
 });
 // get the logout button element
 const logoutBtn = document.getElementById("logoutBtn");
-
 // add a click event listener to the logout button
 logoutBtn.addEventListener("click", () => {
   firebase
