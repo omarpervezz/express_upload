@@ -1,6 +1,31 @@
 body {
   background: $primary_one;
 }
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.spinner {
+  border: 2px solid $primary_two;
+  border-top: 2px solid $primary_four;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 $height__: 100vh;
 section {
   padding: 5rem 0;
@@ -75,7 +100,7 @@ section {
   height: 100%;
   top: 0;
   left: 0;
-  background: rgb(0 0 0 / 19%);
+  background: rgba(0, 0, 0, 0.226);
 }
 .banner_logo {
   max-width: 100%;

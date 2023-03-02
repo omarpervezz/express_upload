@@ -1,12 +1,20 @@
 let blogId = decodeURI(location.pathname.split("/").pop());
+const loader = document.querySelector(".loader");
 let docRef = db.collection("blogs").doc(blogId);
-docRef.get().then((doc) => {
-  if (doc.exists) {
-    setupListings(doc.data());
-  } else {
-    location.replace("/");
-  }
-});
+docRef
+  .get()
+  .then((doc) => {
+    if (doc.exists) {
+      loader.style.display = "none";
+      setupListings(doc.data());
+    } else {
+      location.replace("/");
+    }
+  })
+  .catch((error) => {
+    // Hide the loader
+    loader.style.display = "none";
+  });
 
 const setupListings = (data) => {
   const banner = document.querySelector(".s__banner");

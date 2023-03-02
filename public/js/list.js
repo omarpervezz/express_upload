@@ -1,13 +1,19 @@
 const recentListed = document.querySelector(".col__1");
-
+const loader = document.querySelector(".loader");
 db.collection("blogs")
   .get()
   .then((blogs) => {
+    // hide the loader
+    loader.style.display = "none";
     blogs.forEach((blog) => {
       if (blog.id != decodeURI(location.pathname.split("/").pop())) {
         createBlog(blog);
       }
     });
+  })
+  .catch((error) => {
+    // Hide the loader
+    loader.style.display = "none";
   });
 
 const createBlog = (blog) => {

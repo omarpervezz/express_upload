@@ -1505,6 +1505,31 @@ body {
   background: #f3f7fd;
 }
 
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.spinner {
+  border: 2px solid #1b1b1b;
+  border-top: 2px solid #6179b4;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 section {
   padding: 5rem 0;
 }
@@ -1585,7 +1610,7 @@ section {
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.19);
+  background: rgba(0, 0, 0, 0.226);
 }
 
 .banner_logo {
@@ -2228,6 +2253,10 @@ h2 {
     background: #0f203c;
   }
 }
+.s__banner {
+  background-image: initial;
+}
+
 .property__slider {
   background: #f3f7fd;
   padding-top: 0;
