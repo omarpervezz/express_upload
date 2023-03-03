@@ -327,9 +327,8 @@ h2 {
   align-items: center;
   padding: 0.6rem 0;
   border-radius: 0.4rem;
-
+  filter: grayscale(100%);
   z-index: 1000;
-
   transition: 0.3s all;
 
   ul {
@@ -361,6 +360,9 @@ h2 {
     > :last-child {
       margin-bottom: 0;
     }
+  }
+  &:hover {
+    filter: grayscale(0);
   }
 }
 
