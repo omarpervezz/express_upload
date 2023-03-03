@@ -10,6 +10,7 @@
       }
     ],
     "axe/text-alternatives": "off",
-    "axe/parsing": "off"
+    "axe/parsing": "off",
+    "axe/name-role-value": "off"
   }
 }

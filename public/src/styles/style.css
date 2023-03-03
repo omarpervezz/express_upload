@@ -891,7 +891,7 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
   display: block;
   width: 100%;
   transition: 0.5s;
-  height: 31rem;
+  height: 35rem;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -902,12 +902,12 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 15px 15px 15px;
+  padding: 19px 19px 19px;
   width: 100%;
   font-size: 16px;
-  color: #1b1b1b;
+  color: #f3f7fd;
   opacity: 1;
-  background: #f3f7fd;
+  background: #1b1b1b;
   transition: 0.3s all;
   opacity: 0;
   visibility: hidden;
@@ -1542,6 +1542,17 @@ body {
   animation-delay: 0.5s;
 }
 
+.data_loading_loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.data_loading_loader .bar {
+  background: #1b1b1b;
+}
+
 @keyframes scale-up4 {
   20% {
     background-color: white;
@@ -1549,31 +1560,6 @@ body {
   }
   40% {
     transform: scaleY(1);
-  }
-}
-.loader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-}
-
-.spinner {
-  border: 2px solid #1b1b1b;
-  border-top: 2px solid #6179b4;
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
 section {
@@ -1662,6 +1648,15 @@ section {
 .banner_logo {
   max-width: 100%;
   width: 26rem;
+}
+
+.signup_container,
+.login_container {
+  padding: 0;
+}
+.signup_container .login__,
+.login_container .login__ {
+  font-size: 1.6rem;
 }
 
 .px-app h1 {
@@ -2299,7 +2294,7 @@ h2 {
     background: #0f203c;
   }
 }
-.s__banner {
+.property_cover {
   background-image: initial;
 }
 
@@ -2432,6 +2427,24 @@ h2 {
 .property_description__ #map {
   height: 400px; /* The height is 400 pixels */
   width: 100%; /* The width is the width of the web page */
+}
+
+/* similar property css */
+.similir_property {
+  display: block;
+  padding: 0;
+}
+.similir_property h2 {
+  color: #1b1b1b;
+}
+.similir_property .col__1 {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.similir_property .col__1 .gallery__caption {
+  background: #f3f7fd;
+  color: #1b1b1b;
 }
 
 @media only screen and (max-width: 992px) {
@@ -2923,12 +2936,4 @@ input[type=submit] {
   .row .second_element .footer_logo {
     margin-top: 1rem;
   }
-}
-.signup_container .login__ {
-  color: #f3f7fd;
-  font-size: 1.6rem;
-  text-decoration: underline;
-}
-.signup_container .login__:hover {
-  color: #19469d;
 }/*# sourceMappingURL=style.css.map */

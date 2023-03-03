@@ -1,5 +1,5 @@
 const recentListed = document.querySelector(".col__1");
-const loader = document.querySelector(".loader");
+const loader = document.querySelector(".data_loading_loader");
 db.collection("blogs")
   .get()
   .then((blogs) => {

@@ -1,4 +1,4 @@
-.s__banner {
+.property_cover {
   background-image: initial;
 }
 .property__slider {
@@ -136,6 +136,24 @@
   #map {
     height: 400px; /* The height is 400 pixels */
     width: 100%; /* The width is the width of the web page */
+  }
+}
+
+/* similar property css */
+.similir_property {
+  h2 {
+    color: $primary_two;
+  }
+  display: block;
+  padding: 0;
+  .col__1 {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    .gallery__caption {
+      background: $primary_one;
+      color: $primary_two;
+    }
   }
 }
 

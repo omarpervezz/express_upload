@@ -38,6 +38,17 @@ body {
   animation-delay: 0.5s;
 }
 
+// firebase data loading loader
+
+.data_loading_loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.data_loading_loader .bar {
+  background: $primary_two;
+}
 @keyframes scale-up4 {
   20% {
     background-color: #ffff;
@@ -46,32 +57,6 @@ body {
 
   40% {
     transform: scaleY(1);
-  }
-}
-// firebase data loading loader
-.loader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-}
-
-.spinner {
-  border: 2px solid $primary_two;
-  border-top: 2px solid $primary_four;
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
 $height__: 100vh;
@@ -154,7 +139,13 @@ section {
   max-width: 100%;
   width: 26rem;
 }
-
+.signup_container,
+.login_container {
+  padding: 0;
+  .login__ {
+    font-size: 1.6rem;
+  }
+}
 .px-app {
   h1 {
     width: $full__width;

@@ -1,6 +1,6 @@
 let blogId = decodeURI(location.pathname.split("/").pop());
-const loader = document.querySelectorAll(".loader");
-console.log(loader.length);
+const loader = document.querySelectorAll(".data_loading_loader");
+
 let docRef = db.collection("blogs").doc(blogId);
 for (let x = 0; x < loader.length; x++) {
   docRef

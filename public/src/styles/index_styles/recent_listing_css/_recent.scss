@@ -92,7 +92,7 @@ $width: 100%;
     display: block;
     width: 100%;
     transition: 0.5s;
-    height: 31rem;
+    height: 35rem;
     object-fit: cover;
 
     &:hover {
@@ -104,12 +104,12 @@ $width: 100%;
     position: absolute;
     bottom: 0;
     left: 0;
-    padding: 15px 15px 15px;
+    padding: 19px 19px 19px;
     width: 100%;
     font-size: 16px;
-    color: $primary_two;
+    color: $primary_one;
     opacity: 1;
-    background: $primary_one;
+    background: $primary_two;
     transition: 0.3s all;
     opacity: 0;
     visibility: hidden;
