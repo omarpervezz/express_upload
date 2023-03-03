@@ -9,7 +9,7 @@ signUpForm.addEventListener("submit", (e) => {
   const phone = signUpForm.phone.value;
   const password = signUpForm.password.value;
   const confirmPassword = signUpForm.confirm_password.value;
-  console.log(name);
+
   // validate the user's input
   if (
     name === "" ||
@@ -42,6 +42,9 @@ signUpForm.addEventListener("submit", (e) => {
             phoneNumber: phone,
           });
         });
+
+      // display a popup to the user indicating successful account creation
+      alert("Account successfully created!");
 
       // redirect the user to the home page
       window.location.href = "addlisting.html";

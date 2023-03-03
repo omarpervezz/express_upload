@@ -408,7 +408,7 @@ logoutBtn.addEventListener("click", () => {
     .signOut()
     .then(() => {
       // Sign-out successful.
-      console.log("User signed out successfully!");
+      alert("You signed out successfully!");
       // you can redirect the user to the login page or update UI accordingly
       window.location.href = "login.html";
     })

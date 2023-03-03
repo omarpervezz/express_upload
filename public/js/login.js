@@ -1,4 +1,3 @@
-// Get a reference to the login form
 const loginForm = document.querySelector(".logout_form");
 
 // Add a submit event listener to the login form
@@ -17,12 +16,15 @@ loginForm.addEventListener("submit", (e) => {
       // Clear the login form
       loginForm.reset();
 
+      // Display a popup to the user indicating successful login
+      alert("You are now logged in!");
+
       // Redirect to the home page or update UI
-      // ...
       window.location.href = "index.html";
     })
     .catch((error) => {
       // Handle login errors
-      // ...
+      alert("Incorrect password. Please try again.");
+      console.error(error);
     });
 });
