@@ -1,18 +1,52 @@
 const recentListed = document.querySelector(".col__1");
-const loader = document.querySelector(".data_loading_loader");
+const loader = document.querySelector(".loader_container");
+let limit = 4; // set the number of documents to fetch at a time
+let lastVisible = null; // to keep track of the last visible document
+
+// get the first set of documents
 db.collection("blogs")
+  .orderBy("publishedAt", "desc")
+  .limit(limit)
   .get()
-  .then((blogs) => {
+  .then((querySnapshot) => {
     // hide the loader
     loader.style.display = "none";
-    blogs.forEach((blog) => {
-      if (blog.id != decodeURI(location.pathname.split("/").pop())) {
-        createBlog(blog);
+    querySnapshot.forEach((doc) => {
+      if (doc.id != decodeURI(location.pathname.split("/").pop())) {
+        createBlog(doc);
+        lastVisible = doc; // set the last visible document
       }
+    });
+
+    // load more listings on button click
+    document.querySelector("#load-more-btn").addEventListener("click", () => {
+      // show the loader
+      loader.style.display = "block";
+
+      // fetch the next set of documents
+      db.collection("blogs")
+        .orderBy("publishedAt", "desc")
+        .startAfter(lastVisible)
+        .limit(limit)
+        .get()
+        .then((querySnapshot) => {
+          // hide the loader
+          loader.style.display = "none";
+          querySnapshot.forEach((doc) => {
+            if (doc.id != decodeURI(location.pathname.split("/").pop())) {
+              createBlog(doc);
+              lastVisible = doc; // set the last visible document
+            }
+          });
+        })
+        .catch((error) => {
+          // hide the loader
+          loader.style.display = "none";
+        });
     });
   })
   .catch((error) => {
-    // Hide the loader
+    // hide the loader
     loader.style.display = "none";
   });
 
@@ -33,6 +67,5 @@ const createBlog = (blog) => {
     </figcaption>
   </figure>
 </a>
-
-    `;
+  `;
 };
