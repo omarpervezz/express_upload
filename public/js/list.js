@@ -36,7 +36,7 @@ db.collection("blogs")
           .then((querySnapshot) => {
             // hide the loader if there are no more documents
             if (querySnapshot.size === 0) {
-              loader.style.display = "none";
+              loader.style.opacity = "0";
             } else {
               // hide the loader
               loader.style.display = "none";

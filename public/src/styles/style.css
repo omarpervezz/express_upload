@@ -1153,28 +1153,25 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
 .master_plan_ .bg-primary .fluid_1 p {
   color: #1b1b1b;
 }
-.master_plan_ .gallery__new {
+.master_plan_ .master__img {
   list-style: none;
   padding: 0;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(70ch, 1fr));
 }
-.master_plan_ .gallery__new img {
+.master_plan_ .master__img img {
   display: block;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  height: var(--gallery-height);
+  height: 55rem;
   transform: scale(1) translate(0, 0);
-  transition: transform 1200ms ease-in;
+  transition: transform 800ms ease-in;
 }
-.master_plan_ .gallery__new figure {
-  --gallery-height: 55rem;
-  --gallery-aspect-ratio: 4/3;
-  /* reset figure default margin */
+.master_plan_ .master__img figure {
   margin: 0;
-  height: var(--gallery-height);
+  height: 55rem;
   background-color: hsl(200, 85%, 2%);
   display: grid;
   grid-template-areas: "card";
@@ -1185,49 +1182,51 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
 @supports (aspect-ratio: 1) {
   .master_plan_ .gallery figure,
   .master_plan_ .gallery img {
-    aspect-ratio: var(--gallery-aspect-ratio);
-    /* Remove height to prevent distorting aspect-ratio */
+    aspect-ratio: 1.3333333333;
     height: auto;
   }
 }
-.master_plan_ .gallery__new figure > * {
+.master_plan_ .master__img figure > * {
   grid-area: card;
 }
-.master_plan_ .gallery__new figcaption {
+.master_plan_ .master__img figcaption {
   width: 100%;
-  transition: transform 800ms 400ms ease-in;
+  transition: transform 500ms 500ms ease-in;
   padding: 1.4rem 3rem;
   border-radius: 4px 0 0 0;
   background-color: hsla(0, 0%, 100%, 0.979);
   /* provide stacking context */
   z-index: 1;
 }
-.master_plan_ .gallery__new figcaption h4 {
+.master_plan_ .master__img figcaption h4 {
   font-size: 2.3rem;
   font-weight: bold;
   margin-bottom: 0.4rem;
 }
-.master_plan_ .gallery__new a:hover {
+.master_plan_ .master__img .paragraph_ {
+  color: #1b1b1b;
+}
+.master_plan_ .master__img a:hover {
   border: 0.1rem solid #1b1b1b;
   color: #1b1b1b;
   cursor: pointer;
 }
-.master_plan_ .gallery__new a:hover:after {
+.master_plan_ .master__img a:hover:after {
   background: #1b1b1b;
 }
-.master_plan_ .gallery__new figure:hover figcaption,
+.master_plan_ .master__img figure:hover figcaption,
 .master_plan_ .gallery figure:focus figcaption {
   transform: translateY(0);
 }
-.master_plan_ .gallery__new figure:hover img,
-.master_plan_ .gallery__new figure:focus img {
+.master_plan_ .master__img figure:hover img,
+.master_plan_ .master__img figure:focus img {
   transform: scale(1.3) translate(-8%, -3%);
 }
-.master_plan_ .gallery__new figure:focus {
+.master_plan_ .master__img figure:focus {
   outline: 2px solid white;
   outline-offset: 2px;
 }
-.master_plan_ .gallery__new figure::after {
+.master_plan_ .master__img figure::after {
   content: "";
   grid-area: card;
   width: 100%;
@@ -1236,19 +1235,43 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
 }
 
 @media (any-hover: hover) and (any-pointer: fine) {
-  .gallery__new figcaption {
+  .master__img figcaption {
     transform: translateY(100%);
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .gallery__new * {
+  .master__img * {
     transition-duration: 0ms !important;
   }
-  .gallery__new img {
+  .master__img img {
     transform: none !important;
   }
-  .gallery__new figcaption {
+  .master__img figcaption {
     transition-delay: 0ms;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .master_plan_ .bg-primary {
+    padding: 3rem 0;
+  }
+  .master__img figure {
+    height: 35rem !important;
+  }
+  .master__img img {
+    height: 35rem !important;
+  }
+  .master_plan_ .master__img figcaption h4 {
+    font-size: 1.8rem;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .master_plan_ .master__img figcaption h4 {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 980px) {
+  .master__img {
+    grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
   }
 }
 .fa-spin-fast {
