@@ -10,7 +10,7 @@ db.collection("blogs")
 
     blogs.forEach((blog) => {
       if (blog.id != decodeURI(location.pathname.split("/").pop())) {
-        createBlog(blog);
+        createListing(blog);
       }
     });
   })
@@ -19,7 +19,7 @@ db.collection("blogs")
     loader.style.display = "none";
   });
 
-const createBlog = (blog) => {
+const createListing = (blog) => {
   let data = blog.data();
   recentListed.innerHTML += `
   <a href="/${blog.id}" class="gallery__link">

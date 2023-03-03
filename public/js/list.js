@@ -17,7 +17,7 @@ db.collection("blogs")
       loader.style.display = "none";
       querySnapshot.forEach((doc) => {
         if (doc.id != decodeURI(location.pathname.split("/").pop())) {
-          createBlog(doc);
+          createListing(doc);
           lastVisible = doc; // set the last visible document
         }
       });
@@ -42,7 +42,7 @@ db.collection("blogs")
               loader.style.display = "none";
               querySnapshot.forEach((doc) => {
                 if (doc.id != decodeURI(location.pathname.split("/").pop())) {
-                  createBlog(doc);
+                  createListing(doc);
                   lastVisible = doc; // set the last visible document
                 }
               });
@@ -60,7 +60,7 @@ db.collection("blogs")
     loader.style.display = "none";
   });
 
-const createBlog = (blog) => {
+const createListing = (blog) => {
   let data = blog.data();
   recentListed.innerHTML += `
     <a href="/${blog.id}" class="gallery__link">
