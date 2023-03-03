@@ -19,49 +19,116 @@ $center: center;
       }
     }
   }
-  .container-fluid {
+  .gallery__new {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(70ch, 1fr));
+  }
+
+  .gallery__new img {
+    display: block;
     width: 100%;
-    padding-left: 0 !important;
+    object-fit: cover;
+    height: var(--gallery-height);
+    transform: scale(1) translate(0, 0);
+    transition: transform 1200ms ease-in;
+  }
 
-    .listing_buying {
-      & > div {
-        width: 50%;
-        height: 50vh;
-      }
+  .gallery__new figure {
+    --gallery-height: 55rem;
+    --gallery-aspect-ratio: 4/3;
 
-      .listing_homes {
-        background: linear-gradient(
-            hsla(0, 0%, 0%, 0.432),
-            hsla(0, 0%, 0%, 0.432)
-          ),
-          url("../assets/img/bannerbg2.jpeg");
-        background-repeat: $no_repeat;
-        background-size: $cover;
-        background-position: $center;
-      }
-      .buying_homes {
-        background: linear-gradient(
-            hsla(0, 0%, 0%, 0.192),
-            hwb(0 0% 100% / 0.24)
-          ),
-          url("../assets/img/bannerbg_1.jpeg");
-        background-repeat: $no_repeat;
-        background-size: $cover;
-        background-position: $center;
-      }
+    /* reset figure default margin */
+    margin: 0;
+    height: var(--gallery-height);
+    background-color: hsl(200, 85%, 2%);
+
+    display: grid;
+    grid-template-areas: "card";
+    place-items: end;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  @supports (aspect-ratio: 1) {
+    .gallery figure,
+    .gallery img {
+      aspect-ratio: var(--gallery-aspect-ratio);
+      /* Remove height to prevent distorting aspect-ratio */
+      height: auto;
     }
   }
-}
-@media only screen and (max-width: 1200px) {
-  .master_plan_ .bg-primary {
-    padding: 3rem 0;
+
+  .gallery__new figure > * {
+    grid-area: card;
+  }
+
+  .gallery__new figcaption {
+    width: 100%;
+    transition: transform 800ms 400ms ease-in;
+    padding: 1.4rem 3rem;
+    border-radius: 4px 0 0 0;
+    background-color: hsla(0, 0%, 100%, 0.979);
+    /* provide stacking context */
+    z-index: 1;
+  }
+  .gallery__new figcaption h4 {
+    font-size: 2.3rem;
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+  }
+  .gallery__new a {
+    &:hover {
+      border: 0.1rem solid $primary_two;
+      color: $primary_two;
+      cursor: pointer;
+    }
+    &:hover:after {
+      background: $primary_two;
+    }
+  }
+  .gallery__new figure:hover figcaption,
+  .gallery figure:focus figcaption {
+    transform: translateY(0);
+  }
+
+  .gallery__new figure:hover img,
+  .gallery__new figure:focus img {
+    transform: scale(1.3) translate(-8%, -3%);
+  }
+
+  .gallery__new figure:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }
+
+  /* Vignette */
+  .gallery__new figure::after {
+    content: "";
+    grid-area: card;
+    width: 100%;
+    height: 100%;
+    position: relative;
   }
 }
-@media only screen and (max-width: 992px) {
-  .listing_buying {
-    & > div {
-      width: 100% !important;
-      height: 30vh !important;
-    }
+@media (any-hover: hover) and (any-pointer: fine) {
+  .gallery__new figcaption {
+    transform: translateY(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery__new * {
+    transition-duration: 0ms !important;
+  }
+
+  .gallery__new img {
+    transform: none !important;
+  }
+
+  .gallery__new figcaption {
+    transition-delay: 0ms;
   }
 }

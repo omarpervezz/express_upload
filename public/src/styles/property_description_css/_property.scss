@@ -151,9 +151,12 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    .gallery__caption {
-      background: $primary_one;
-      color: $primary_two;
+    .gallery__link {
+      border-bottom: none;
+      .gallery__caption {
+        background: $primary_one;
+        color: $primary_two;
+      }
     }
   }
 }

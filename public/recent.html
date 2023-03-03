@@ -571,6 +571,168 @@
     <div class="back_to_top_container">
       <a id="back_top"></a>
     </div>
+    <style>
+      /* Box sizing rules */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      /* Remove default margin */
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      p {
+        margin: 0;
+      }
+
+      /* Set core body defaults */
+      body {
+        min-height: 100vh;
+        text-rendering: optimizeSpeed;
+        line-height: 1.5;
+        font-family: system-ui, sans-serif;
+      }
+
+      /* Make images easier to work with */
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      /***
+ 🟣 Modern CSS Solutions Demo Styles
+ */
+
+      .gallery {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
+        gap: 1rem;
+      }
+
+      .gallery img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+        height: var(--gallery-height);
+        transform: scale(1) translate(0, 0);
+        transition: transform 1200ms ease-in;
+      }
+
+      .gallery figure {
+        --gallery-height: 15rem;
+        --gallery-aspect-ratio: 4/3;
+
+        /* reset figure default margin */
+        margin: 0;
+        height: var(--gallery-height);
+        background-color: hsl(200, 85%, 2%);
+
+        display: grid;
+        grid-template-areas: "card";
+        place-items: end;
+        border-radius: 0.5rem;
+        overflow: hidden;
+      }
+
+      @supports (aspect-ratio: 1) {
+        .gallery figure,
+        .gallery img {
+          aspect-ratio: var(--gallery-aspect-ratio);
+          /* Remove height to prevent distorting aspect-ratio */
+          height: auto;
+        }
+      }
+
+      .gallery figure > * {
+        grid-area: card;
+      }
+
+      .gallery figcaption {
+        transition: transform 800ms 400ms ease-in;
+
+        /* Visual styles for the caption */
+        padding: 0.25em 0.5em;
+        border-radius: 4px 0 0 0;
+        background-color: hsl(0 0% 100% / 87%);
+        /* provide stacking context */
+        z-index: 1;
+      }
+
+      .gallery figure:hover figcaption,
+      .gallery figure:focus figcaption {
+        transform: translateY(0);
+      }
+
+      .gallery figure:hover img,
+      .gallery figure:focus img {
+        transform: scale(1.3) translate(-8%, -3%);
+      }
+
+      .gallery figure:focus {
+        outline: 2px solid white;
+        outline-offset: 2px;
+      }
+
+      @media (any-hover: hover) and (any-pointer: fine) {
+        .gallery figcaption {
+          transform: translateY(100%);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .gallery * {
+          transition-duration: 0ms !important;
+        }
+
+        .gallery img {
+          transform: none !important;
+        }
+
+        .gallery figcaption {
+          transition-delay: 0ms;
+        }
+      }
+
+      /* Vignette */
+      .gallery figure::after {
+        content: "";
+        grid-area: card;
+        width: 100%;
+        height: 100%;
+        box-shadow: inset 0 0 2rem 1rem hsl(0 0% 0% / 65%);
+        position: relative;
+      }
+    </style>
+    <!-- Modern CSS Solutions - Responsive Image Gallery With Animated Captions
+Generated from: ModernCSS.dev/responsive-image-gallery-with-animated-captions/ -->
+    <ul class="gallery" role="list">
+      <li>
+        <figure tabindex="0">
+          <img alt="" src="https://picsum.photos/550" />
+          <figcaption>Candy canes ice cream</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure tabindex="0">
+          <img alt="" src="https://picsum.photos/400" />
+          <figcaption>Ice cream biscuit</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure tabindex="0">
+          <img alt="" src="https://picsum.photos/600" />
+          <figcaption>Cream biscuit marzipan</figcaption>
+        </figure>
+      </li>
+    </ul>
+
     <!--footer end-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

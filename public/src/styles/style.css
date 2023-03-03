@@ -878,6 +878,7 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
 .gallery__link {
   overflow: hidden;
   width: 33%;
+  border: 0.1rem solid #f3f7fd;
 }
 .gallery__link:hover .gallery__caption {
   opacity: 1;
@@ -891,7 +892,7 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
   display: block;
   width: 100%;
   transition: 0.5s;
-  height: 35rem;
+  height: 32rem;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -1137,6 +1138,7 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
 .master_plan_ {
   padding-top: 0;
   padding-bottom: 0;
+  /* Vignette */
 }
 .master_plan_ .bg-primary {
   padding: 7rem 0;
@@ -1151,36 +1153,102 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
 .master_plan_ .bg-primary .fluid_1 p {
   color: #1b1b1b;
 }
-.master_plan_ .container-fluid {
+.master_plan_ .gallery__new {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70ch, 1fr));
+}
+.master_plan_ .gallery__new img {
+  display: block;
   width: 100%;
-  padding-left: 0 !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: var(--gallery-height);
+  transform: scale(1) translate(0, 0);
+  transition: transform 1200ms ease-in;
 }
-.master_plan_ .container-fluid .listing_buying > div {
-  width: 50%;
-  height: 50vh;
+.master_plan_ .gallery__new figure {
+  --gallery-height: 55rem;
+  --gallery-aspect-ratio: 4/3;
+  /* reset figure default margin */
+  margin: 0;
+  height: var(--gallery-height);
+  background-color: hsl(200, 85%, 2%);
+  display: grid;
+  grid-template-areas: "card";
+  place-items: end;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
-.master_plan_ .container-fluid .listing_buying .listing_homes {
-  background: linear-gradient(hsla(0, 0%, 0%, 0.432), hsla(0, 0%, 0%, 0.432)), url("../assets/img/bannerbg2.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-.master_plan_ .container-fluid .listing_buying .buying_homes {
-  background: linear-gradient(hsla(0, 0%, 0%, 0.192), hwb(0 0% 100%/0.24)), url("../assets/img/bannerbg_1.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-@media only screen and (max-width: 1200px) {
-  .master_plan_ .bg-primary {
-    padding: 3rem 0;
+@supports (aspect-ratio: 1) {
+  .master_plan_ .gallery figure,
+  .master_plan_ .gallery img {
+    aspect-ratio: var(--gallery-aspect-ratio);
+    /* Remove height to prevent distorting aspect-ratio */
+    height: auto;
   }
 }
-@media only screen and (max-width: 992px) {
-  .listing_buying > div {
-    width: 100% !important;
-    height: 30vh !important;
+.master_plan_ .gallery__new figure > * {
+  grid-area: card;
+}
+.master_plan_ .gallery__new figcaption {
+  width: 100%;
+  transition: transform 800ms 400ms ease-in;
+  padding: 1.4rem 3rem;
+  border-radius: 4px 0 0 0;
+  background-color: hsla(0, 0%, 100%, 0.979);
+  /* provide stacking context */
+  z-index: 1;
+}
+.master_plan_ .gallery__new figcaption h4 {
+  font-size: 2.3rem;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+.master_plan_ .gallery__new a:hover {
+  border: 0.1rem solid #1b1b1b;
+  color: #1b1b1b;
+  cursor: pointer;
+}
+.master_plan_ .gallery__new a:hover:after {
+  background: #1b1b1b;
+}
+.master_plan_ .gallery__new figure:hover figcaption,
+.master_plan_ .gallery figure:focus figcaption {
+  transform: translateY(0);
+}
+.master_plan_ .gallery__new figure:hover img,
+.master_plan_ .gallery__new figure:focus img {
+  transform: scale(1.3) translate(-8%, -3%);
+}
+.master_plan_ .gallery__new figure:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+.master_plan_ .gallery__new figure::after {
+  content: "";
+  grid-area: card;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+@media (any-hover: hover) and (any-pointer: fine) {
+  .gallery__new figcaption {
+    transform: translateY(100%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gallery__new * {
+    transition-duration: 0ms !important;
+  }
+  .gallery__new img {
+    transform: none !important;
+  }
+  .gallery__new figcaption {
+    transition-delay: 0ms;
   }
 }
 .fa-spin-fast {
@@ -1196,6 +1264,7 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
 }
 .team__members {
   background-color: #eceff1;
+  padding: 6rem 0;
 }
 .team__members .gallery_title {
   width: 100%;
@@ -2470,7 +2539,10 @@ h2 {
   justify-content: center;
   align-items: center;
 }
-.similir_property .col__1 .gallery__caption {
+.similir_property .col__1 .gallery__link {
+  border-bottom: none;
+}
+.similir_property .col__1 .gallery__link .gallery__caption {
   background: #f3f7fd;
   color: #1b1b1b;
 }
