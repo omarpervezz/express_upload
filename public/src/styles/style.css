@@ -2412,25 +2412,28 @@ h2 {
 .about__wo {
   background-color: #1b1b1b;
 }
+.about__wo h2 {
+  font-size: 3.4rem;
+}
 .about__wo h2,
 .about__wo p,
 .about__wo a {
-  color: #ffffff !important;
+  color: #121212 !important;
 }
 .about__wo .seller_btn,
 .about__wo .buyer_btn {
   background: transparent;
-  border: 0.1rem solid #ffffff;
+  border: 0.1rem solid #121212;
 }
 .about__wo .seller_btn:before, .about__wo .seller_btn:after,
 .about__wo .buyer_btn:before,
 .about__wo .buyer_btn:after {
-  background: #ffffff !important;
+  background: #121212 !important;
 }
 .about__wo .seller_btn:hover,
 .about__wo .buyer_btn:hover {
-  background: #ffffff;
-  color: #000 !important;
+  background: #121212;
+  color: #f3f7fd !important;
 }
 
 @media only screen and (max-width: 992px) {

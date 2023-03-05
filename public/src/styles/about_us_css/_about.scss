@@ -39,22 +39,25 @@
 
 .about__wo {
   background-color: #1b1b1b;
+  h2 {
+    font-size: 3.4rem;
+  }
   h2,
   p,
   a {
-    color: $white !important;
+    color: $primary_two !important;
   }
   .seller_btn,
   .buyer_btn {
     background: transparent;
-    border: 0.1rem solid $white;
+    border: 0.1rem solid $primary_two;
     &:before,
     &:after {
-      background: $white !important;
+      background: $primary_two !important;
     }
     &:hover {
-      background: $white;
-      color: $black !important;
+      background: $primary_two;
+      color: $primary_one !important;
     }
   }
 }
