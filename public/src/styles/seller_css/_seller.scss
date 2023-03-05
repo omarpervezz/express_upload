@@ -18,24 +18,53 @@
 }
 
 .our_goal {
-  background-color: #eceff1;
-  padding: 8rem 0;
+  background-color: $primary_two;
+  padding: 0;
   position: relative;
-
-  .container-fluid {
-    width: 90% !important;
+  .bg_img_ {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 641px;
+  }
+  .seller__description {
+    background: linear-gradient(rgb(18 18 18 / 48%), rgb(18 18 18 / 69%)),
+      url(../assets/img/connectwork.png);
+  }
+  .bg_img_1 {
+    background-image: url(../assets/img/bannerbg2.jpeg);
   }
 
+  .bg_img_2 {
+    background-image: url(../assets/img/bannerbg_1.jpeg);
+  }
+
+  .bg_img_3 {
+    background-image: url(../assets/img/canon-3628787_960_720.jpg);
+  }
+  .bg_img_4 {
+    background-image: url(../assets/img/drone.jpg);
+  }
+  .bg_img_5 {
+    background-image: url(../assets/img/staging.jpg);
+  }
+  .bg_img_6 {
+    background-image: url(../assets/img/23243195-33.jpg);
+  }
   h2,
   p,
   h5 {
-    color: #1b1b1b;
-  }
-  img {
-    width: 85rem;
-    max-width: 100%;
+    color: $primary_one;
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  .our_goal .bg_img_ {
+    height: 500px;
+  }
+}
 @media only screen and (max-width: 992px) {
+  .our_goal .bg_img_ {
+    height: 300px;
+  }
 }

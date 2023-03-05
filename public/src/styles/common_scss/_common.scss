@@ -1,5 +1,9 @@
 body {
-  background: $primary_one;
+  background: linear-gradient(
+      rgba(242, 246, 252, 0.363),
+      rgba(243, 247, 253, 0.322)
+    ),
+    url(../assets/img/webb.png);
 }
 // page loader
 .container_loader {

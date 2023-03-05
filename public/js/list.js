@@ -24,9 +24,6 @@ db.collection("blogs")
 
       // load more listings on button click
       document.querySelector("#load-more-btn").addEventListener("click", () => {
-        // show the loader
-        loader.style.display = "block";
-
         // fetch the next set of documents
         db.collection("blogs")
           .orderBy("publishedAt", "desc")
@@ -36,7 +33,7 @@ db.collection("blogs")
           .then((querySnapshot) => {
             // hide the loader if there are no more documents
             if (querySnapshot.size === 0) {
-              loader.style.opacity = "0";
+              alert("There are no listings available.");
             } else {
               // hide the loader
               loader.style.display = "none";
@@ -48,17 +45,11 @@ db.collection("blogs")
               });
             }
           })
-          .catch((error) => {
-            // hide the loader
-            loader.style.display = "none";
-          });
+          .catch((error) => {});
       });
     }
   })
-  .catch((error) => {
-    // hide the loader
-    loader.style.display = "none";
-  });
+  .catch((error) => {});
 
 const createListing = (blog) => {
   let data = blog.data();

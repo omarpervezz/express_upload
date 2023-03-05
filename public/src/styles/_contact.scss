@@ -3,7 +3,8 @@ fieldset {
 }
 
 .row .first_element:first-child {
-  background-color: $primary_two;
+  background: linear-gradient($primary_two, $primary_two),
+    url(../assets/img/darkness.png);
 }
 
 .row .second_element:last-child {

@@ -2,28 +2,33 @@
   padding: 10rem 0;
   text-align: center;
   min-height: 30vh;
-  background-color: $primary_one;
+  background: linear-gradient(
+      rgba(242, 246, 252, 0.363),
+      rgba(243, 247, 253, 0.322)
+    ),
+    url(../assets/img/webb.png);
 
   h2 {
     margin: 0 0 1.5rem 0;
     text-align: left;
-    color: #1b1b1b;
+    color: $primary_two;
     &:before,
     &:after {
       content: none !important;
     }
   }
   .paragraph_ {
-    color: #1b1b1b;
+    color: $primary_two;
     width: 59%;
     text-align: left;
     font-weight: 500;
     margin: 1.3rem 0;
   }
   .learn_more_btn {
-    border: 0.1rem solid #1b1b1b;
+    border: 0.1rem solid $primary_two;
+
     &:hover:after {
-      background-color: $black;
+      background-color: $primary_two;
     }
     &:hover {
       background: transparent;

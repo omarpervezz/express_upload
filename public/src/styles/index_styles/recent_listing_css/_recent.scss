@@ -1,7 +1,11 @@
 $height: 100%;
 $width: 100%;
 .gallery {
-  background: linear-gradient($primary_one, $primary_one);
+  background: linear-gradient(
+      rgba(242, 246, 252, 0.363),
+      rgba(243, 247, 253, 0.322)
+    ),
+    url(../assets/img/webb.png);
   display: flex;
   padding: 0;
   transition: 0.3s;

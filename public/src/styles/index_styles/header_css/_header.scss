@@ -11,7 +11,7 @@ header {
   padding: 2rem 0;
   width: 100%;
   top: 0;
-  z-index: 1001;
+  z-index: 100;
   transition: 0.2s ease-in-out;
   /* container-fluid start */
   .container-fluid {
@@ -105,7 +105,8 @@ header {
   } /* container fluid end */
 }
 .nav_bg_adder {
-  background: #1b1b1b;
+  background: $primary_two;
+
   .nav_menu {
     li {
       a {
