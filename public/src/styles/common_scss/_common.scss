@@ -1,9 +1,5 @@
 body {
-  background: linear-gradient(
-      rgba(242, 246, 252, 0.363),
-      rgba(243, 247, 253, 0.322)
-    ),
-    url(../assets/img/webb.png);
+  background: $primary_one;
 }
 // page loader
 .container_loader {
@@ -136,7 +132,7 @@ section {
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.226);
+  background: rgba(0, 0, 0, 0.473);
 }
 .banner_logo {
   max-width: 100%;

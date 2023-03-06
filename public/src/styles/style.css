@@ -813,72 +813,34 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
 }
 .gallery {
   background: linear-gradient(rgba(242, 246, 252, 0.363), rgba(243, 247, 253, 0.322)), url(../assets/img/webb.png);
-  display: flex;
   padding: 0;
   transition: 0.3s;
   position: relative;
+}
+.gallery .data_loading_loader {
+  z-index: 1001;
 }
 .gallery .col__1 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 75%;
 }
-.gallery .gallery_title__ {
-  display: flex;
-  flex-direction: column;
-  width: 25%;
-}
-.gallery .gallery_title__ .realty_listing_ {
-  width: 100%;
-  max-width: 1100px;
-  padding: 2rem 20px;
-  position: relative;
-}
-.gallery .gallery_title__ .realty_listing_ .gallery__title {
-  color: #121212;
-  font-size: 6rem;
-}
-.gallery .gallery_title__ .realty_listing_ .gallery__title span {
-  color: #19469d;
-}
-.gallery .gallery_title__ .realty_listing_ .gallery__title:before {
-  content: "";
-  font-size: 3.4rem;
-  display: block;
-  width: 67%;
-  height: 0.4rem;
-  background-color: #19469d;
-  position: absolute;
-  top: 120%;
-  left: -1%;
-}
-.gallery .gallery_title__ .realty_listing_ .gallery__title:after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 0.4rem;
-  background-color: #121212;
-  position: absolute;
-  top: 110%;
-  right: -10%;
-}
-.gallery .gallery_title__ .btn_all_litsting {
+.gallery .btn_all_litsting {
   color: #ffffff;
   z-index: 1000;
   transition: background 0.3s ease-in, color 0.3s ease-in;
 }
-.gallery .gallery_title__ .btn_all_litsting:hover:after {
+.gallery .btn_all_litsting:hover:after {
   background: #000;
 }
-.gallery .gallery_title__ .btn_all_litsting:hover {
+.gallery .btn_all_litsting:hover {
   color: #121212;
   border: 0.1rem solid #121212;
 }
 .gallery__link {
   overflow: hidden;
-  width: 33%;
-  border: 0.1rem solid #f3f7fd;
+  width: 33.3333333333%;
+  border: 0.1rem solid #e4ffe6;
 }
 .gallery__link:hover .gallery__caption {
   opacity: 1;
@@ -889,15 +851,19 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
   position: relative;
 }
 .gallery__image {
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  transition: transform 0.5s ease;
   display: block;
   width: 100%;
-  transition: 0.5s;
-  height: 32rem;
+  height: 35rem;
   -o-object-fit: cover;
      object-fit: cover;
 }
 .gallery__image:hover {
-  transform: scale(1.2);
+  transform: scale(1.5);
 }
 .gallery__caption {
   position: absolute;
@@ -909,7 +875,7 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
   color: #121212;
   opacity: 1;
   background: #f3f7fd;
-  transition: 0.3s all;
+  transition: bottom 0.5s ease;
   opacity: 0;
   visibility: hidden;
   bottom: -6rem;
@@ -923,12 +889,6 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
   .gallery__link {
     margin: 1.4rem 0;
   }
-  .gallery h2 {
-    text-align: center;
-  }
-  .gallery h2:before, .gallery h2:after {
-    display: none !important;
-  }
   .gallery .col__1 {
     flex-direction: column !important;
     align-items: center;
@@ -938,17 +898,8 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
   .gallery__link {
     width: 90%;
   }
-  .gallery__column .realty_listing_ {
-    padding: 0 25px !important;
-  }
   .gallery__caption span {
     font-size: 1.4rem !important;
-  }
-  .gallery .gallery_title__ {
-    width: 100%;
-  }
-  .gallery__column .realty_listing_ .gallery__title {
-    font-size: 3.2rem !important;
   }
 }
 .card__container__ {
@@ -957,11 +908,12 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
   flex-direction: row;
   justify-content: center;
   gap: 1rem;
+  background-color: #ffffff;
 }
 
 .card-featured {
   position: relative;
-  background-color: white;
+  background-color: #f3f7fd;
   overflow: hidden;
   cursor: pointer;
   width: 100%;
@@ -1001,7 +953,7 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
   left: 0;
   right: 0;
   z-index: 3;
-  background: #ffffff;
+  background: #f3f7fd;
   padding: 1rem;
   transition: top 0.4s, opacity 0.6s;
 }
@@ -1083,7 +1035,7 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
   padding: 10rem 0;
   text-align: center;
   min-height: 30vh;
-  background: linear-gradient(rgba(242, 246, 252, 0.363), rgba(243, 247, 253, 0.322)), url(../assets/img/webb.png);
+  background-color: #f3f7fd;
 }
 .work_sec h2 {
   margin: 0 0 1.5rem 0;
@@ -1596,7 +1548,7 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
   }
 }
 body {
-  background: linear-gradient(rgba(242, 246, 252, 0.363), rgba(243, 247, 253, 0.322)), url(../assets/img/webb.png);
+  background: #f3f7fd;
 }
 
 .container_loader {
@@ -1736,7 +1688,7 @@ section {
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.226);
+  background: rgba(0, 0, 0, 0.473);
 }
 
 .banner_logo {
@@ -2175,18 +2127,6 @@ h2 {
   text-align: center;
   position: relative;
 }
-.list__banner_ .px-app {
-  width: 89%;
-  margin: 0 auto;
-  max-width: 1140px;
-  text-align: center;
-}
-.list__banner_ .px-app h1 {
-  width: 100%;
-  height: 100%;
-  line-height: 110%;
-  color: #ffffff;
-}
 
 .loader_container {
   position: absolute;
@@ -2198,14 +2138,14 @@ h2 {
   z-index: 100;
 }
 
-.load_more .load_more_btn {
+.load_more_btn {
   width: 200px;
 }
-.load_more .load_more_btn:hover {
+.load_more_btn:hover {
   border: 0.1rem solid #121212;
   color: #121212;
 }
-.load_more .load_more_btn:hover:after {
+.load_more_btn:hover:after {
   background: #121212;
 }
 

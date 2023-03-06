@@ -2,12 +2,7 @@
   padding: 10rem 0;
   text-align: center;
   min-height: 30vh;
-  background: linear-gradient(
-      rgba(242, 246, 252, 0.363),
-      rgba(243, 247, 253, 0.322)
-    ),
-    url(../assets/img/webb.png);
-
+  background-color: $primary_one;
   h2 {
     margin: 0 0 1.5rem 0;
     text-align: left;

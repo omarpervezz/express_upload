@@ -7,20 +7,6 @@
   align-items: center;
   text-align: center;
   position: relative;
-
-  .px-app {
-    width: 89%;
-    margin: 0 auto;
-    max-width: 1140px;
-    text-align: center;
-
-    h1 {
-      width: $full__width;
-      height: $full__height;
-      line-height: calc($full__height * 1.1);
-      color: $white;
-    }
-  }
 }
 .loader_container {
   position: absolute;
@@ -31,16 +17,15 @@
   background: rgb(0, 0, 0, 0.5);
   z-index: 100;
 }
-.load_more {
-  .load_more_btn {
-    $button__width: 200px;
-    width: $button__width;
-    &:hover {
-      border: 0.1rem solid $primary_two;
-      color: $primary_two;
-    }
-    &:hover:after {
-      background: $primary_two;
-    }
+
+.load_more_btn {
+  $button__width: 200px;
+  width: $button__width;
+  &:hover {
+    border: 0.1rem solid $primary_two;
+    color: $primary_two;
+  }
+  &:hover:after {
+    background: $primary_two;
   }
 }

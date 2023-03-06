@@ -2,748 +2,162 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recent Sell - The Right REALTY Group</title>
-    <!-- favicon -->
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="../src/assets/logo_img/KakaoTalk_Photo_2023-02-10-00-16-41.png"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!--font-awesome icon-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link rel="stylesheet" href="./src/styles/style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Responsive Image Grid</title>
   </head>
-  <body>
-    <!--start header-->
-    <header class="animate__animated">
-      <div class="container-fluid">
-        <nav>
-          <div class="row_">
-            <div class="logo_contianer">
-              <div class="logo_">
-                <a href="index.html" class="d-flex align-items-center">
-                  <img
-                    src="./src/assets/logo_img/WHITE_TRRG2.png"
-                    alt="logo"
-                    class="img-fluid header_logo"
-                  />
-                </a>
-              </div>
-            </div>
-            <div
-              class="d-flex justify-content-end align-items-center menu_container"
-            >
-              <div class="nav_menu">
-                <ul class="d-flex desk_menu">
-                  <li class="d-flex flex-column">
-                    <a href="list.html" class="nav_item">REALTY Listing</a>
-                  </li>
-                  <li class="d-flex align-items-center">
-                    <a href="#" class="d-flex align-items-center nav_item"
-                      >Master Plan
-                      <i class="fa-solid fa-chevron-down"></i>
-                    </a>
-                    <!--sub menu-->
-                    <div class="dropdown-content d-flex flex-column">
-                      <a href="seller.html"> <span>Sellers</span></a>
-                      <a href="buyer.html"> <span>Buyers</span></a>
-                      <a href="#">
-                        <span>Pre-Listing Survey for Sellers</span>
-                      </a>
-                      <a href="#">
-                        <span>Pre-Appointment Survey for Buyers</span>
-                      </a>
-                    </div>
-                  </li>
-                  <li>
-                    <a class="d-flex align-items-center nav_item" href="#"
-                      >Why REALTY
-                      <i class="fa-solid fa-chevron-down"></i>
-                    </a>
-                    <!--sub menu-->
-                    <div class="dropdown-content d-flex flex-column">
-                      <a href="about.html">
-                        <span>About</span>
-                      </a>
-                      <a href="team.html">
-                        <span>Team</span>
-                      </a>
-                      <a href="#">
-                        <span>Videos</span>
-                      </a>
-                      <a href="contact.html">
-                        <span>Contact</span>
-                      </a>
-                    </div>
-                  </li>
-                  <li>
-                    <a href="addlisting.html" class="nav_item">Add Listings</a>
-                  </li>
-                  <li><a href="#" class="nav_item">Career</a></li>
-                </ul>
-              </div>
-            </div>
-            <div>
-              <div class="hamburger" data-pushbar-target="mypushbar1">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-                <span>Menu</span>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!--end header-->
-    <!--mobile menu start-->
-    <div
-      data-pushbar-id="mypushbar1"
-      data-pushbar-direction="right"
-      class="push-container push__bar"
-    >
-      <div class="d-flex align-items-center h-100 overflow-hidden">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col col-12">
-              <div class="menu_logo__">
-                <img
-                  src="./src/assets/logo_img/the_right_realty_group.jpeg"
-                  alt="the_right_realty_group"
-                  class="img-fluid right_realty_logo"
-                />
-                <img
-                  src="./src/assets/logo_img/cropped-eXp-Realty-Color-2.png"
-                  alt="exp_logo"
-                  class="img-fluid exp_logo"
-                />
-              </div>
-            </div>
-            <div class="col col-12 mobile_menu_container">
-              <div class="d-flex flex-column mobile_menu w-75">
-                <div
-                  class="d-flex justify-content-between top_menu_information__"
-                >
-                  <div>
-                    <h5>REALTY Listing</h5>
-                    <ul>
-                      <li><a href="#">Our Properties</a></li>
-                      <li><a href="#">Recent Sell</a></li>
-                      <li><a href="#">Recent added</a></li>
-                      <li>
-                        <a href="#">Pre-Appointment Survey for Buyers</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h5>Master Plan</h5>
-                    <ul>
-                      <li><a href="#">Sellers</a></li>
-                      <li><a href="#">Buyers</a></li>
-                      <li><a href="#">Pre-Listing Survey for Sellers</a></li>
-                      <li>
-                        <a href="#">Pre-Appointment Survey for Buyers</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h5>Why REALTY</h5>
-                    <ul>
-                      <li><a href="#">About</a></li>
-                      <li><a href="#">Team</a></li>
-                      <li><a href="#">Videos</a></li>
-                      <li><a href="#">Contact</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- <hr class="pb-4" /> -->
-                <div
-                  class="d-flex justify-content-between bottom_menu_information__"
-                >
-                  <div>
-                    <h5>Testimonials</h5>
-                  </div>
-                  <div>
-                    <h5>Career</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button id="close" type="button" data-pushbar-close>
-        <i class="fa-solid fa-xmark"></i>
-        <span class="close_text">close</span>
-      </button>
-    </div>
-    <!--mobile menu end-->
-    <!--main start-->
-    <main>
-      <!--list banner start-->
-      <section class="list__banner_ height-50">
-        <div class="overlay__"></div>
-        <div class="bottom_bg"></div>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-12">
-              <img
-                src="./src/assets/logo_img/WHITE_TRRG2.png"
-                alt="banner_logo"
-                class="img-fluid banner_logo animate__animated h__1"
-                data-scroll
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--list banner end-->
-      <!--all list start-->
-      <section class="gallery all_listing_gallery__">
-        <div>
-          <div class="gallery__column animate__animated justify-content-center">
-            <div class="realty_listing_">
-              <h2 class="heading_four">
-                REALTY
-                <span>LITSTED</span>
-              </h2>
-            </div>
-            <a href="#" class="gallery__link">
-              <figure class="gallery__thumb">
-                <img
-                  src="https://images.pexels.com/photos/13067768/pexels-photo-13067768.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="gallery_img"
-                  class="gallery__image"
-                />
-                <figcaption
-                  class="gallery__caption d-flex justify-content-around"
-                >
-                  <span>$12,995,000</span><span>7135 Blvd</span>
-                </figcaption>
-              </figure>
-            </a>
-            <a href="#" class="gallery__link">
-              <figure class="gallery__thumb">
-                <img
-                  src="https://images.pexels.com/photos/13067768/pexels-photo-13067768.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="gallery_img"
-                  class="gallery__image"
-                />
-                <figcaption
-                  class="gallery__caption d-flex justify-content-around"
-                >
-                  <span>$12,995,000</span><span>7135 Blvd</span>
-                </figcaption>
-              </figure>
-            </a>
-            <a href="#" class="gallery__link">
-              <figure class="gallery__thumb">
-                <img
-                  src="https://images.pexels.com/photos/13067768/pexels-photo-13067768.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="gallery_img"
-                  class="gallery__image"
-                />
-                <figcaption
-                  class="gallery__caption d-flex justify-content-around"
-                >
-                  <span>$12,995,000</span><span>7135 Blvd</span>
-                </figcaption>
-              </figure>
-            </a>
-          </div>
-          <div class="col__1 gallery__column animate__animated">
-            <a href="#" class="gallery__link">
-              <figure class="gallery__thumb">
-                <img
-                  src="https://images.pexels.com/photos/13067768/pexels-photo-13067768.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="gallery_img"
-                  class="gallery__image"
-                />
-                <figcaption
-                  class="gallery__caption d-flex justify-content-around"
-                >
-                  <span>$12,995,000</span><span>7135 Blvd</span>
-                </figcaption>
-              </figure>
-            </a>
-            <a href="#" class="gallery__link">
-              <figure class="gallery__thumb">
-                <img
-                  src="https://images.pexels.com/photos/13067768/pexels-photo-13067768.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="gallery_img"
-                  class="gallery__image"
-                />
-                <figcaption
-                  class="gallery__caption d-flex justify-content-around"
-                >
-                  <span>$12,995,000</span><span>7135 Blvd</span>
-                </figcaption>
-              </figure>
-            </a>
-            <a href="#" class="gallery__link">
-              <figure class="gallery__thumb">
-                <img
-                  src="https://images.pexels.com/photos/3288100/pexels-photo-3288100.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="gallery_img"
-                  class="gallery__image"
-                />
-                <figcaption
-                  class="gallery__caption d-flex justify-content-around"
-                >
-                  <span>$12,995,000</span><span>7135 Blvd</span>
-                </figcaption>
-              </figure>
-            </a>
-            <a href="#" class="gallery__link">
-              <figure class="gallery__thumb">
-                <img
-                  src="https://images.pexels.com/photos/4221409/pexels-photo-4221409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="gallery_img"
-                  class="gallery__image"
-                />
-                <figcaption
-                  class="gallery__caption d-flex justify-content-around"
-                >
-                  <span>$12,995,000</span><span>7135 Blvd</span>
-                </figcaption>
-              </figure>
-            </a>
-            <a href="#" class="gallery__link">
-              <figure class="gallery__thumb">
-                <img
-                  src="https://images.pexels.com/photos/4221409/pexels-photo-4221409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="gallery_img"
-                  class="gallery__image"
-                />
-                <figcaption
-                  class="gallery__caption d-flex justify-content-around"
-                >
-                  <span>$12,995,000</span><span>7135 Blvd</span>
-                </figcaption>
-              </figure>
-            </a>
-          </div>
-          <div class="gallery__column animate__animated">
-            <a href="#" class="gallery__link">
-              <figure class="gallery__thumb">
-                <img
-                  src="https://images.pexels.com/photos/13067768/pexels-photo-13067768.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="gallery_img"
-                  class="gallery__image"
-                />
-                <figcaption
-                  class="gallery__caption d-flex justify-content-around"
-                >
-                  <span>$12,995,000</span><span>7135 Blvd</span>
-                </figcaption>
-              </figure>
-            </a>
-            <a href="#" class="gallery__link">
-              <figure class="gallery__thumb">
-                <img
-                  src="https://images.pexels.com/photos/13067768/pexels-photo-13067768.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="gallery_img"
-                  class="gallery__image"
-                />
-                <figcaption
-                  class="gallery__caption d-flex justify-content-around"
-                >
-                  <span>$12,995,000</span><span>7135 Blvd</span>
-                </figcaption>
-              </figure>
-            </a>
-            <a href="#" class="gallery__link">
-              <figure class="gallery__thumb">
-                <img
-                  src="https://images.pexels.com/photos/14286298/pexels-photo-14286298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="gallery_img"
-                  class="gallery__image"
-                />
-                <figcaption
-                  class="gallery__caption d-flex justify-content-around"
-                >
-                  <span>$12,995,000</span><span>7135 Blvd</span>
-                </figcaption>
-              </figure>
-            </a>
-            <a href="#" class="gallery__link">
-              <figure class="gallery__thumb">
-                <img
-                  src="https://images.pexels.com/photos/13067768/pexels-photo-13067768.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="gallery_img"
-                  class="gallery__image"
-                />
-                <figcaption
-                  class="gallery__caption d-flex justify-content-around"
-                >
-                  <span>$12,995,000</span><span>7135 Blvd</span>
-                </figcaption>
-              </figure>
-            </a>
-            <a href="#" class="gallery__link">
-              <figure class="gallery__thumb">
-                <img
-                  src="https://images.pexels.com/photos/13067768/pexels-photo-13067768.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="gallery_img"
-                  class="gallery__image"
-                />
-                <figcaption
-                  class="gallery__caption d-flex justify-content-around"
-                >
-                  <span>$12,995,000</span><span>7135 Blvd</span>
-                </figcaption>
-              </figure>
-            </a>
-          </div>
-        </div>
-      </section>
-      <!--al list end-->
-      <!--pagination-->
-      <section class="pagination__">
-        <div class="pagination">
-          <div class="pages">
-            <a href="#" class="page">1</a>
-            <a href="#" class="page">2</a>
-            <a href="#" class="page">3</a>
-            <a href="#" class="page">4</a>
-            <a href="#" class="page">5</a>
-            <a href="#" class="page">6</a>
-            <a href="#" class="page">...</a>
-            <a href="#" class="page">23</a>
-          </div>
-        </div>
-      </section>
-      <!--pagination-->
-      <!--have a question-->
-      <section class="question__">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-12">
-              <h2 class="heading_two animate__animated h__1" data-scroll>
-                Have a question? Let us know
-              </h2>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--have a question-->
-      <!--social media start-->
-      <div class="social_media">
-        <ul>
-          <li>
-            <a href="#"
-              ><img
-                src="./src/assets/social_media_icon/Facebook.png"
-                alt="facebook"
-                class="img-fluid"
-            /></a>
-          </li>
-          <li>
-            <a href="#"
-              ><img
-                src="./src/assets/social_media_icon/LinkedIn.png"
-                alt="linkedin"
-                class="img-fluid"
-            /></a>
-          </li>
-          <li>
-            <a href="#"
-              ><img
-                src="./src/assets/social_media_icon/Twitter.png"
-                alt="twitter"
-            /></a>
-          </li>
-          <li>
-            <a href="#" class="instragram_"
-              ><img
-                src="./src/assets/social_media_icon/Instagram.png"
-                alt="instragram"
-                class="img-fluid"
-            /></a>
-          </li>
-        </ul>
-      </div>
-      <!--social media end-->
-    </main>
-    <!--main end-->
-    <!--footer-->
-    <footer>
-      <!--contact us-->
-      <div class="contact_form_wrapper">
-        <div class="">
-          <div class="row">
-            <div class="col-12">
-              <div class="row">
-                <div class="col-md-8 col-lg-8 first_element">
-                  <div class="form_content c__1 animate__animated" data-scroll>
-                    <div class="container__box">
-                      <form class="contact_form">
-                        <fieldset>
-                          <legend class="legend_">
-                            💙 Hello, Lets get in touch
-                          </legend>
-                          <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Your Name"
-                          /><br />
-                          <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Your Email"
-                          /><br />
-                          <input
-                            type="number"
-                            id="phone"
-                            name="phone"
-                            placeholder="Your Number"
-                          /><br />
-                        </fieldset>
-                        <fieldset>
-                          <textarea
-                            id="message"
-                            name="message"
-                            placeholder="Your Message"
-                          ></textarea
-                          ><br /><br />
-                        </fieldset>
+  <!-- Coding With Nick -->
+  <style>
+    /* Coding With Nick */
+    @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
 
-                        <button type="submit" class="btn_ submit_button__">
-                          Send Message
-                        </button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 col-lg-4 second_element">
-                  <div
-                    class="form_infromation__ c__2 animate__animated"
-                    data-scroll
-                  >
-                    <div>
-                      <h2 class="forminformation__title">
-                        We'd love to <br />
-                        Hear <span>from you</span>
-                      </h2>
-                      <p class="short_title">
-                        The Right REALTY Group | eXp Realty of California Inc.
-                      </p>
-                      <p class="form_email__">info@jamesw.in</p>
-                      <p>Phone: (714) 336-5222</p>
-                      <div class="footer_logo">
-                        <img
-                          src="./src/assets/logo_img/the_right_realty_group.jpeg"
-                          alt="logo"
-                          class="img-fluid footer_logo_1"
-                        />
-                        <img
-                          src="./src/assets/logo_img/cropped-eXp-Realty-Color-2.png"
-                          alt="logo"
-                          class="img-fluid footer_logo_2"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--contact us-->
-    </footer>
-    <!--footer-->
-    <!--back to top-->
-    <div class="back_to_top_container">
-      <a id="back_top"></a>
-    </div>
-    <style>
-      /* Box sizing rules */
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+    }
+    .header {
+      text-align: center;
+      padding: 32px;
+    }
+    .header h1 {
+      font-family: "Sacramento";
+      font-size: 50px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0px 100px 100px 100px;
+    }
+    .column {
+      flex: 25%;
+      max-width: 25%;
+    }
+    .img-hover-zoom {
+      height: auto;
+      overflow: hidden;
+      border: 5px solid #ffff;
+    }
+    .img-hover-zoom img {
+      vertical-align: middle;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      transition: transform 0.5s ease;
+    }
+    .img-hover-zoom:hover img {
+      transform: scale(1.5);
+    }
+
+    @media screen and (max-width: 800px) {
+      .column {
+        flex: 50%;
+        max-width: 50%;
       }
+    }
 
-      /* Remove default margin */
-      body,
-      h1,
-      h2,
-      h3,
-      h4,
-      p {
-        margin: 0;
-      }
-
-      /* Set core body defaults */
-      body {
-        min-height: 100vh;
-        text-rendering: optimizeSpeed;
-        line-height: 1.5;
-        font-family: system-ui, sans-serif;
-      }
-
-      /* Make images easier to work with */
-      img {
-        display: block;
+    @media screen and (max-width: 500px) {
+      .column {
+        flex: 100%;
         max-width: 100%;
       }
+    }
+  </style>
+  <body>
+    <!-- Header -->
+    <div class="header">
+      <h1>Responsive Image Grid</h1>
+    </div>
 
-      /***
- 🟣 Modern CSS Solutions Demo Styles
- */
+    <!-- Photo Grid -->
+    <div class="row">
+      <div class="column">
+        <div class="img-hover-zoom">
+          <img
+            src="https://cdn.pixabay.com/photo/2016/09/22/11/55/kitchen-1687121_960_720.jpg"
+            style="width: 100%"
+            alt=""
+          />
+        </div>
+        <div class="img-hover-zoom">
+          <img
+            src="https://cdn.pixabay.com/photo/2014/07/10/17/18/large-home-389271_960_720.jpg"
+            style="width: 100%"
+            alt=""
+          />
+        </div>
+        <div class="img-hover-zoom">
+          <img
+            src="https://cdn.pixabay.com/photo/2021/02/09/20/45/architecture-5999913_960_720.jpg"
+            style="width: 100%"
+            alt=""
+          />
+        </div>
+      </div>
 
-      .gallery {
-        list-style: none;
-        padding: 0;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
-        gap: 1rem;
-      }
+      <div class="column">
+        <div class="img-hover-zoom">
+          <img src="img4.jpg" style="width: 100%" alt="" />
+        </div>
+        <div class="img-hover-zoom">
+          <img src="img5.jpg" style="width: 100%" alt="" />
+        </div>
+        <div class="img-hover-zoom">
+          <img src="img6.jpg" style="width: 100%" alt="" />
+        </div>
+      </div>
 
-      .gallery img {
-        display: block;
-        width: 100%;
-        object-fit: cover;
-        height: var(--gallery-height);
-        transform: scale(1) translate(0, 0);
-        transition: transform 1200ms ease-in;
-      }
+      <div class="column">
+        <div class="img-hover-zoom">
+          <img
+            src="https://cdn.pixabay.com/photo/2017/07/08/06/48/sa-rapita-2483668_960_720.jpg"
+            style="width: 100%"
+            alt=""
+          />
+        </div>
+        <div class="img-hover-zoom">
+          <img
+            src="https://cdn.pixabay.com/photo/2016/12/30/08/00/kitchen-1940177_960_720.jpg"
+            style="width: 100%"
+            alt=""
+          />
+        </div>
+        <div class="img-hover-zoom">
+          <img
+            src="https://cdn.pixabay.com/photo/2018/07/15/13/04/living-room-3539587_960_720.jpg"
+            style="width: 100%"
+            alt=""
+          />
+        </div>
+      </div>
 
-      .gallery figure {
-        --gallery-height: 15rem;
-        --gallery-aspect-ratio: 4/3;
-
-        /* reset figure default margin */
-        margin: 0;
-        height: var(--gallery-height);
-        background-color: hsl(200, 85%, 2%);
-
-        display: grid;
-        grid-template-areas: "card";
-        place-items: end;
-        border-radius: 0.5rem;
-        overflow: hidden;
-      }
-
-      @supports (aspect-ratio: 1) {
-        .gallery figure,
-        .gallery img {
-          aspect-ratio: var(--gallery-aspect-ratio);
-          /* Remove height to prevent distorting aspect-ratio */
-          height: auto;
-        }
-      }
-
-      .gallery figure > * {
-        grid-area: card;
-      }
-
-      .gallery figcaption {
-        transition: transform 800ms 400ms ease-in;
-
-        /* Visual styles for the caption */
-        padding: 0.25em 0.5em;
-        border-radius: 4px 0 0 0;
-        background-color: hsl(0 0% 100% / 87%);
-        /* provide stacking context */
-        z-index: 1;
-      }
-
-      .gallery figure:hover figcaption,
-      .gallery figure:focus figcaption {
-        transform: translateY(0);
-      }
-
-      .gallery figure:hover img,
-      .gallery figure:focus img {
-        transform: scale(1.3) translate(-8%, -3%);
-      }
-
-      .gallery figure:focus {
-        outline: 2px solid white;
-        outline-offset: 2px;
-      }
-
-      @media (any-hover: hover) and (any-pointer: fine) {
-        .gallery figcaption {
-          transform: translateY(100%);
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .gallery * {
-          transition-duration: 0ms !important;
-        }
-
-        .gallery img {
-          transform: none !important;
-        }
-
-        .gallery figcaption {
-          transition-delay: 0ms;
-        }
-      }
-
-      /* Vignette */
-      .gallery figure::after {
-        content: "";
-        grid-area: card;
-        width: 100%;
-        height: 100%;
-        box-shadow: inset 0 0 2rem 1rem hsl(0 0% 0% / 65%);
-        position: relative;
-      }
-    </style>
-    <!-- Modern CSS Solutions - Responsive Image Gallery With Animated Captions
-Generated from: ModernCSS.dev/responsive-image-gallery-with-animated-captions/ -->
-    <ul class="gallery" role="list">
-      <li>
-        <figure tabindex="0">
-          <img alt="" src="https://picsum.photos/550" />
-          <figcaption>Candy canes ice cream</figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure tabindex="0">
-          <img alt="" src="https://picsum.photos/400" />
-          <figcaption>Ice cream biscuit</figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure tabindex="0">
-          <img alt="" src="https://picsum.photos/600" />
-          <figcaption>Cream biscuit marzipan</figcaption>
-        </figure>
-      </li>
-    </ul>
-
-    <!--footer end-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
-    <script src="./src/vendor_js/jquery.fittext.js"></script>
-    <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
-    <script src="./src/js/pushbar.js"></script>
-    <script src="./main.js"></script>
+      <div class="column">
+        <div class="img-hover-zoom">
+          <img
+            src="https://cdn.pixabay.com/photo/2016/09/04/12/38/living-room-1643855_960_720.jpg"
+            style="width: 100%"
+            alt=""
+          />
+        </div>
+        <div class="img-hover-zoom">
+          <img
+            src="https://cdn.pixabay.com/photo/2016/07/26/18/27/kitchen-1543488_960_720.jpg"
+            style="width: 100%"
+            alt=""
+          />
+        </div>
+        <div class="img-hover-zoom">
+          <img
+            src="https://cdn.pixabay.com/photo/2016/09/08/12/00/gallery-1654072_960_720.jpg"
+            style="width: 100%"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
   </body>
 </html>

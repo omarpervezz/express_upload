@@ -15,7 +15,6 @@ db.collection("blogs")
     // Hide the loader
     loader.style.display = "none";
   });
-
 const createListing = (blog) => {
   let data = blog.data();
   recentListed.innerHTML += `
