@@ -126,7 +126,12 @@ $(document).ready(function () {
 
     btn.on("click", function (e) {
       e.preventDefault();
-      $("html, body").animate({ scrollTop: 0 }, "300");
+      $("html, body").animate(
+        {
+          scrollTop: 0,
+        },
+        "300"
+      );
     });
   });
 
@@ -363,19 +368,19 @@ function testimonialController(prev, next) {
 
   const customStyles = document.createElement("style");
   customStyles.innerHTML = `
-  #testimonial-slider .owl-buttons .btn_::before {
-    content: none !important;
-  }
+#testimonial-slider .owl-buttons .btn_::before {
+  content: none !important;
+}
+
+#testimonial-slider .owl-buttons .btn-prev::before {
+  content: "Prev";
+ 
+}
+
+#testimonial-slider .owl-buttons .btn-next::before {
+  content: "Next";
   
-  #testimonial-slider .owl-buttons .btn-prev::before {
-    content: "Prev";
-   
-  }
-  
-  #testimonial-slider .owl-buttons .btn-next::before {
-    content: "Next";
-    
-  }
+}
 `;
   document.head.appendChild(customStyles);
 }

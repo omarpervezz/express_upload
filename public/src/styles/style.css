@@ -827,7 +827,6 @@ header .container-fluid .row_ .menu_container .nav_menu ul li:first-child {
 }
 .gallery .btn_all_litsting {
   color: #ffffff;
-  z-index: 1000;
   transition: background 0.3s ease-in, color 0.3s ease-in;
 }
 .gallery .btn_all_litsting:hover:after {
